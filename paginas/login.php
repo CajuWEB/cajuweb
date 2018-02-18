@@ -55,7 +55,6 @@
                             <input type="text" name="login"  class="form-control" placeholder="Exemplo123">
                         </div>
                         <div class="form-group">
-                            <input type="password" name="senha" id="senha"  class="form-control" placeholder="Senha">
                             <label for="senha" class="sr-only">senha</label>
                             <input type="password" name="senha" id="senha" class="form-control" placeholder="Senha">
                         </div>

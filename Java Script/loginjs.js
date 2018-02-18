@@ -12,6 +12,5 @@ function showPassword() {
         $('.checkbox').removeClass('show');
         $('#senha').attr('type', 'password');
         
-    }
-    
+    }  
 }
