@@ -51,16 +51,17 @@
                 <h1>Siscomf - Login</h1>
                     <form action="login.php" method="post">
                         <div class="form-group">
-                            <label for="login" class="sr-only">Email</label>
+                            <label for="login" class="sr-only">nome</label>
                             <input type="text" name="login"  class="form-control" placeholder="Exemplo123">
                         </div>
                         <div class="form-group">
-                            <label for="senha" class="sr-only">Password</label>
                             <input type="password" name="senha" id="senha"  class="form-control" placeholder="Senha">
+                            <label for="senha" class="sr-only">senha</label>
+                            <input type="password" name="senha" id="senha" class="form-control" placeholder="Senha">
                         </div>
                         <div class="checkbox">
                             <span class="character-checkbox" onclick="showPassword()"></span>
-                            <span class="label">Show password</span>
+                            <span class="label">Mostrar senha</span>
                         </div>
                         <input type="submit" id="botao" class="btn btn-custom btn-lg btn-block" value="Entrar">
                     </form>
