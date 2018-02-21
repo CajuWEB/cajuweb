@@ -1,0 +1,84 @@
+*{
+	margin:0px;
+	padding:0px;
+}
+body{
+   background-image: url("img/tela.jpg");
+}
+ul#menu{
+	list-style-type:none;
+	display:inline-block;
+width:1500px;
+height:100px;
+	
+	
+}
+
+ul#menu li{
+	font-size: 20px;
+	float:left;
+	background:rgba(13,93,66, 0);
+	width:200px;
+	padding:15px;
+	text-align:center;
+	position:relative;
+	list-style-type:none;
+	
+}
+ul#menu a{
+	text-decoration:none;
+	color:#fff;
+	padding:15px 20px;
+	text-transform:uppercase;
+	font-weight:200;
+	color: #fff;
+	padding: 15px;
+
+}
+
+ul#menu li ul{
+	
+	display:none;
+	width:150px;
+	position:absolute;
+	left:0px;
+	margin:0 auto;
+	
+}
+
+
+ul#menu li:hover ul{
+	display:block;
+	
+	
+	
+}
+
+
+
+ul#menu li:hover ul li ul{
+	display:none;
+}
+
+ul#menu li ul li:hover ul{
+	display:block;
+	position:absolute;
+	top:0px;
+	left:230px;
+}
+
+ul#menu li:hover{
+	background:rgba(7,101,67, 0.41);
+	
+}
+/* formatação de imagens */
+figure.foto-legenda{
+    
+  border: 8px solid red;  
+}
+
+
+
+
+
+
