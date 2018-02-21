@@ -60,7 +60,7 @@ class ProdutoView{
             <legend>Grave um novo Produto</legend>
 
             <label for='nomeProd'> Nome: </label>
-            <input type='text' name='name' id='nome' class='credo'/><br/><br/>
+            <input type='text' name='nomeProd' id='nomeProd' class='credo'/><br/><br/>
 
             <label for='codBarras'> Codigo: </label>
             <input type='text' name='codBarras' id='codBarras' class='credo'/><br/><br/>
@@ -173,8 +173,8 @@ class ProdutoView{
                 <fieldset>
                   <legend>Apague um Produto</legend>
 
-                  <label for='codigo'>codigo:</label>
-                  <input type='text' name='cod' id='codigo' class='credo'><br/>
+                  <label for='idProd'>codigo:</label>
+                  <input type='text' name='idProd' id='idProd' class='credo'><br/>
 
 
                   <input type='hidden' name='classe' value='produto'>
@@ -185,28 +185,28 @@ class ProdutoView{
                   </form>
                   </div></div>";
 
-                  $conexao = new conexaobd("localhost:3306", "root", "", "produtos");
+                  $conexao = new conexaobd("localhost:3306", "root", "", "siscomf");
                   $PDO = $conexao->conecta();
-                  $stmt = $PDO->query("select * from produto");
+                  $stmt = $PDO->query("select * from produtos");
                   echo "<div class='tabelas'><table  class='tabela'>
                             <tr>
                                 <td class='nome1'>NOME</td>
-                                <td class='des1'>DESCRIÇÃO</td>
-                                <td class='cod1'>CODIGO</td>
-                                <td class='preco1'>PREÇO</td>
-                                <td class='qtd1'>QTD</td>
-                                <td class='img1'>IMAGEM</td>
+                                <td class='des1'>FABRICANTE</td>
+                                <td class='cod1'>PREÇO</td>
+                                <td class='preco1'>DATA V</td>
+                                <td class='qtd1'>DATA C</td>
+                                <td class='img1'>ID</td>
                             </tr>
                         </table></div>";
                   while ($result2 = $stmt->fetch(PDO::FETCH_ASSOC)) {
                       echo "<div class='tabelas'><table>
                                 <tr>
-                                    <td class='nome'>$result2[nome]</td>
-                                    <td class='des'>$result2[descricao]</td>
-                                    <td class='cod'>$result2[cod]</td>
-                                    <td class='preco'>R$: $result2[preco]</td>
-                                    <td class='qtd'>$result2[quantidade]</td>
-                                    <td class='img'>$result2[img]</td>
+                                    <td class='nome'>$result2[nomeProd]</td>
+                                    <td class='des'>$result2[fabricante]</td>
+                                    <td class='cod'>$result2[precoProd]</td>
+                                    <td class='preco'>$result2[dataValidade]</td>
+                                    <td class='qtd'>$result2[dataCompra]</td>
+                                    <td class='img'>$result2[idProd]</td>
                                 </tr>
 
 

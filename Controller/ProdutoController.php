@@ -84,7 +84,7 @@ class ProdutoController{
             $prod= new produto();
               if($_SERVER['REQUEST_METHOD']=='POST'){
 
-                $prod->setCod($_POST['cod']);
+                $prod->setIdProd($_POST['idProd']);
 
                 $pDAO = new produtoDAO();
                 $pDAO->excluir($prod);

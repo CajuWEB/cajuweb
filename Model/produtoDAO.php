@@ -45,9 +45,9 @@ class produtoDAO {
 
     public function excluir ($prod){
 
-        $cod = $prod->getCod();
+        $idProd = $prod->getIdProd();
 
-        $q = "delete from produto where cod = $cod";
+        $q = "delete from produtos where idProd = $idProd";
         $conex = new conexaobd("localhost:3306", "root", "", "siscomf");
         $pdo = $conex->conecta();
         $stmt = $pdo->query($q);
