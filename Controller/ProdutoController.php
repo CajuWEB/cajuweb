@@ -93,4 +93,33 @@ class ProdutoController{
 
           }
           }
+
+
+
+          public function consulta(){
+              $pDAO = new produtoDAO();
+              $lista = $pDAO->retornaProd();
+              $_REQUEST['lista'] = $lista;
+              $pView = new ProdutoView();
+              $pView->consultarProd();
+
+          }
+
+          function consultar(){
+            $prod= new produto();
+              if($_SERVER['REQUEST_METHOD']=='POST'){
+
+                $prod->setNomeProd($_POST['nomeProd']);
+
+                $pDAO = new produtoDAO();
+                $pDAO->buscar($prod);
+                echo "<script>alert('Produto Buscado')</script>";
+                //echo"<script> history.go(-2)</script>";
+                //$nomeProd = $stmt['nomeProd'];
+
+            }
+          }
+
+
+
 }

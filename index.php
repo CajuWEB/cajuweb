@@ -1,7 +1,9 @@
-<?php 
+<?php
+
+    require_once 'controller/FilialController.php';
     require_once 'controller/ProdutoController.php';
     require_once 'Home.php';
-     
+
 
     if($_SERVER['REQUEST_METHOD']==='POST' && isset($_POST['metodo'])){
         $metodo = $_POST['metodo'];

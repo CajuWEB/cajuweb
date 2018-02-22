@@ -217,4 +217,50 @@ class ProdutoView{
             $this->roda();
         }
 
+
+        //consulta
+        public function consultarProd(){
+           $this->cab();
+
+           echo "<div class='tabelas'><div id='mostra'>
+               <form action='index.php' method='POST'>
+               <fieldset>
+                 <legend>Busque um produto</legend>
+
+                 <label for='nomeProd'>nome:</label>
+                 <input type='text' name='nomeProd' id='nomeProd' class='credo' value='igor'><br/>
+
+
+                 <input type='hidden' name='classe' value='produto'>
+                 <input type='hidden' name='metodo' value='consulta'>
+                 <input type='submit' value='Consultar' id='but'>
+                 <input type='reset' value='Limpar' id='but'>
+                 </fieldset>
+                 </form>
+                 </div></div>";
+
+
+                 echo "<div class='tabelas'><table  class='tabela'>
+                           <tr>
+                               <td class='nome1'>NOME</td>
+                               <td class='des1'>FABRICANTE</td>
+                               <td class='cod1'>PREÇO</td>
+                               <td class='preco1'>DATA V</td>
+                               <td class='qtd1'>DATA C</td>
+                               <td class='img1'>ID</td>
+                           </tr>
+                       </table></div>
+
+
+
+                           </table></div>
+                           <h1></h1>";
+
+
+
+
+           $this->roda();
+       }
+
+
 }

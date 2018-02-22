@@ -53,6 +53,15 @@ class produtoDAO {
         $stmt = $pdo->query($q);
     }
 
+    public function buscar ($prod){
+        $nomeProd = $prod->getNomeProd();
+        $q = "select * from produtos where nomeProd = '$nomeProd'";
+        $conex = new conexaobd("localhost:3306", "root", "", "siscomf");
+        $pdo = $conex->conecta();
+        $stmt = $pdo->query($q);
+
+    }
+
      function atualizarProd($prod){
             $nomeProd=$prod->getNomeProd();
             $codBarras=$prod->getCodBarras();
@@ -73,4 +82,31 @@ class produtoDAO {
             $pdo = $conex->conecta();
             $stmt = $pdo->query($q);
         }
+
+       //retorna produto
+       function retornaProd($prod){
+            $nomeProd = $prod->getNomeProd();
+            $conexao = new conexaobd("localhost:3306", "root", "", "siscomf");
+            $PDO = $conexao->conecta();
+            $stmt = $PDO->query("SELECT * FROM produtos WHERE nomeProd='$nomeProd'");
+            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            for($i = 0; $i < $stmt->rowCount(); $i++){
+                $produto[$i] = new produto();
+                $produto[$i]->setNomeProd($result[$i]['nomeProd']);
+                $produto[$i]->setCodBarras($result[$i]['codBarras']);
+                $produto[$i]->setFabricante($result[$i]['fabricante']);
+                $produto[$i]->setPrecoProd($result[$i]['precoProd']);
+                $produto[$i]->setQtdProd($result[$i]['qtdProd']);
+                $produto[$i]->setDataCompra($result[$i]['dataCompra']);
+                $produto[$i]->setDataValidade($result[$i]['dataValidade']);
+                $produto[$i]->setCategoria($result[$i]['categoria']);
+
+            }
+
+            return $produto;
+        }
+
+
+
 }
