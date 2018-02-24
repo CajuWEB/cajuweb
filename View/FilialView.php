@@ -6,24 +6,92 @@ class FilialView{
     private function cab(){
           echo"
 
+                
                 <html lang='pt-br'>
                     <head>
-                        <title>WF Livros</title>
+                        <title>Siscomf</title>
                         <meta charset='UTF-8'>
                         <link rel='stylesheet' type='text/css' href='../View/Css/produto.css'>
+						<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
+						<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js'></script>
+						<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
 
                     </head>
-                    <body>";
+                    <body>
+					<nav class=' navbar-inverse'>
+  <div class='container-fluid'>
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class='navbar-header'>
+      <button type='button' class='navbar-toggle collapsed' data-toggle='collapse' data-target='#bs-example-navbar-collapse-1' aria-expanded='false'>
+        <span class='sr-only'>Toggle navigation</span>
+        <span class='icon-bar'></span>
+        <span class='icon-bar'></span>
+        <span class='icon-bar'></span>
+      </button>
+      <a class='navbar-brand' href='#'>Siscomf | Filiais</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class='collapse navbar-collapse' id='bs-example-navbar-collapse-1'>
+      <ul class='nav navbar-nav'>
+	  <li class='active'><a href='../Home.php'>Home</a></li>
+        <li class='active'><a href='lista'>Listar<span class='sr-only'>(current)</span></a></li>
+        <li class='active'><a href='novo'>Cadastrar</a></li>
+		<li class='active'><a href='update'>Alterar</a></li>
+        <li class='active'><a href='delete'>Excluir</a></li>
+      </ul>
+
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+					";
     }
 
-    private function roda(){
-        echo "</body>
+     private function roda(){
+        echo "
+		<div class='panel-footer navbar-fixed-bottom' align='center'>
+	<h6>@Copyright 2018 - CajuWEB</h6>
+	</div>
+
+		</body>
+            </html>";
+    }
+	private function roda2(){
+        echo "
+		<div class='panel-footer' align='center'>
+	<h6>@Copyright 2018 - CajuWEB</h6>
+	</div>
+
+		</body>
             </html>";
     }
 
     public function listaTudo(){
         $this->cab();
         $lista = $_REQUEST['lista'];
+		
+       echo"<div class='container'>
+
+		<div class='panel-body'></div>
+		<div class='form-group col'>
+		<h2>Lista de Filiais</h2>
+		</div>
+
+
+		<div class='table-responsive'>
+		<table class='table'>
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Rua</th>
+        <th>Número</th>
+		<th>Bairro</th>
+		<th>Complemento</th>
+		
+      </tr>
+    </thead>
+	";
+
         foreach ($lista as $linha){
             $nome = $linha->getNome();
             $rua = $linha->getRua();
@@ -33,18 +101,24 @@ class FilialView{
 
 
             echo "
-                <figure class='foto-legenda' >
+                <tbody>
 
-                    <img src = '../img/$nome' width='250' height='300';>
-                    <figcaption>
+				<tr>
+				<td>$nome</td>
+				<td>$rua</td>
+				<td>$numero</td>
+				<td>$bairro</td>
+				<td>$complemento</td>
 
-                        <p clas= 'desc'>$rua</p>
-                    </figcaption>
-                    <h3>$numero</h3>
-                    <h3>$complemento</h3>
-                    <h5 id='titulo'style='margin-top:-10px;'>R$=$bairro</h5>
-                </figure>";
-                    }
+				</tr>
+
+				</tbody>
+				";
+                    } echo"
+
+					</table></div></div>
+
+					";
         $this->roda();
     }
 
@@ -52,31 +126,75 @@ class FilialView{
         $this->cab();
 
         echo "
-    <div id='mostra'>
+    <div class='container'>
+		<div class='container'>
+
+		<div class='panel-body'></div>
+
+		<div class='col'>
+		<div class='col-sm-3'></div>
+		<div class='col-sm-6'>
+		<h2> Cadastrar Filial</h2>
+		</div>
+		</div>
+		</div>
+		<div class='container'>
         <form method='POST' action='index.php'>
-            <fieldset>
-            <legend>Grave uma nova filial Produto</legend>
 
-            <label for='nome'> Nome: </label>
-            <input type='text' name='nome' id='nome' class='credo'/><br/><br/>
+			<div class='form-group col'>
+					<div class='col-sm-3'></div>
+					<div class='col-sm-6'>
+					<div class='form-group'>
+						<input type='text' name='nome' id='nome' class='form-control' placeholder='Nome'>
+					</div>
 
-            <label for='rua'> rua: </label>
-            <input type='text' name='rua' id='rua' class='credo'/><br/><br/>
 
-            <label for='numero'> numero: </label>
-            <input type='text' name='numero' id='numero' class='credo'/><br/><br/>
 
-            <label for='bairro'> bairro: </label>
-            <input type='text' name='bairro' id='bairro' class='credo'/><br/><br/>
 
-            <label for='complemento'> complemento: </label>
-            <input type='text' name='complemento' id='complemento' class='credo'/><br/><br/>
+					<div class='form-group'>
+						<input type='text' name='rua' id='rua' class='form-control' placeholder='Rua'>
+					</div>
 
-        <input type='hidden' name='classe' value='Filial'>
-        <input type='hidden' name='metodo' value='CadastrarFilial'>
-        <button type='submit' id='but'>Inserir</button>
-        <button type='reset' id='but'>Limpar</button>
-        </form>
+
+
+
+					<div class='form-group'>
+						<input type='text' class='form-control' name='numero' id='numero' placeholder='Número'>
+					</div>
+
+
+
+
+					<div class='form-group'>
+						<input type='text' class='form-control' name='bairro' id='bairro' placeholder='Bairro'>
+					</div>
+
+
+
+
+					<div class='form-group'>
+						<input type='text' class='form-control' name='complemento' id='complemento' placeholder='Complemento'>
+					</div>
+
+
+
+				<div class='form-group'>
+						<input type='hidden' name='classe' value='Filial'>
+						<input type='hidden' name='metodo' value='CadastrarFilial'>
+						<div class='col-sm-9'>
+						<button type='submit' class='btn btn-success pull-right'>Cadastrar</button>
+						</div>
+						<div class='col-sm-3'>
+						<button type='reset' class='btn btn-danger pull-right'>Cancelar</button>
+						</div>
+					</div>
+					</div>
+			</div>
+		</form>
+
+
+		</div>
+		<div class='panel-body'></div>
     </div>";
         $this->roda();
 
@@ -85,117 +203,198 @@ class FilialView{
 
             $this->cab();
 
-            echo "<div class='tabelas'><div id='mostra'>
-                  <form action='index.php' method='POST' class='formulario'>
-                  <fieldset>
+            echo "<div class='container'>
+		<div class='container'>
 
-                  <legend>Atualize o Produto</legend>
+		<div class='panel-body'></div>
 
-                  <label for='idFilial'> id: </label>
-                  <input type='text' name='idFilial' id='idFilial' class='credo'/><br/><br/>
+		<div class='col'>
+		<div class='col-sm-3'></div>
+		<div class='col-sm-6'>
+		<h2> Alterar Filial</h2>
+		</div>
+		</div>
+		</div>
 
-                  <label for='nome'> nome: </label>
-                  <input type='text' name='nome' id='nome' class='credo'/><br/><br/>
+		<div class='container'>
+        <form method='POST' action='index.php'>
 
-                  <label for='rua'> rua: </label>
-                  <input type='text' name='rua' id='rua' class='credo'/><br/><br/>
-
-                  <label for='bairro'> bairro: </label>
-                  <input type='text' name='bairro' id='bairro' class='credo'/><br/><br/>
-
-                  <label for='numero'> numero: </label>
-                  <input type='text' name='numero' id='numero' class='credo'/><br/><br/>
-
-                  <label for='complemento'> complemento: </label>
-                  <input type='text' name='complemento' id='complemento' class='credo'/><br/><br/>
+			<div class='form-group col'>
+					<div class='col-sm-3'></div>
+					<div class='col-sm-6'>
 
 
 
-                  <input type='hidden' name='classe' value='filial'>
-                  <input type='hidden' name='metodo' value='atualizar'>
-                  <input type='submit' value='ENVIAR' id='but'>
-                  <input type='reset' value='APAGAR' id='but'>
-                  </fieldset>
-                  </form>
-                  </div></div>";
+					<div class='form-group'>
+						<input type='text' name='idFilial' id='idFilial' class='form-control' placeholder='Id'>
+					</div>
+
+					<div class='form-group'>
+						<input type='text' name='nome' id='nome' class='form-control' placeholder='Nome'>
+					</div>
+
+
+
+
+					<div class='form-group'>
+						<input type='text' name='rua' id='rua' class='form-control' placeholder='Rua'>
+					</div>
+
+
+
+
+					<div class='form-group'>
+						<input type='text' class='form-control' name='numero' id='numero' placeholder='Número'>
+					</div>
+
+
+
+
+					<div class='form-group'>
+						<input type='text' class='form-control' name='bairro' id='bairro' placeholder='Bairro'>
+					</div>
+
+
+
+
+					<div class='form-group'>
+						<input type='text' class='form-control' name='complemento' id='complemento' placeholder='Complemento'>
+					</div>
+
+
+
+				<div class='form-group'>
+						<input type='hidden' name='classe' value='filial'>
+						<input type='hidden' name='metodo' value='atualizar'>
+						<div class='col-sm-9'>
+						<button type='submit' class='btn btn-success pull-right' >Atualizar</button>
+						</div>
+						<div class='col-sm-3'>
+						<button type='reset' class='btn btn-danger pull-right'>Cancelar</button>
+						</div>
+					</div>
+					</div>
+			</div>
+		</form>
+		</div>
+
+    </div>";
                   $conexao = new conexaobd("localhost:3306", "root", "", "siscomf");
                   $PDO = $conexao->conecta();
                   $stmt = $PDO->query("select * from filiais");
-                  echo "<div class='tabelas'><table  class='tabela'>
-                            <tr>
-                                <td class='nome1'>NOME</td>
-                                <td class='des1'>rua</td>
-                                <td class='cod1'>numero</td>
-                                <td class='preco1'>bairro</td>
-                                <td class='qtd1'>complemento</td>
-                                <td class='img1'>ID</td>
+                  echo "<div class='container'>
+				  <div class='panel-body'></div>
+		<div class='form-group col'>
+		<h2>Lista de Filiais</h2>
+		</div>
+				  <div class='table-responsive'>
+				  <table class='table'>
+				  <thead>
+							<tr>
+                                <th>Nome</th>
+                                <th>Rua</th>
+                                <th>Número</th>
+                                <th>Bairro</th>
+                                <th>Complemento</th>
+                                <th>Id</th>
                             </tr>
-                        </table></div>";
+                        </thead></div></div> ";
                   while ($result2 = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                      echo "<div class='tabelas'><table>
+                      echo "<tbody>
                                 <tr>
-                                    <td class='nome'>$result2[nome]</td>
-                                    <td class='des'>$result2[rua]</td>
-                                    <td class='cod'>$result2[numero]</td>
-                                    <td class='preco'>$result2[bairro]</td>
-                                    <td class='qtd'>$result2[complemento]</td>
-                                    <td class='img'>$result2[idFilial]</td>
+                                    <td>$result2[nome]</td>
+                                    <td>$result2[rua]</td>
+                                    <td>$result2[numero]</td>
+                                    <td>$result2[bairro]</td>
+                                    <td>$result2[complemento]</td>
+                                    <td>$result2[idFilial]</td>
                                 </tr>
 
 
-                            </table></div>";
-                  }
+                            </tbody>";
+                  }	echo"</table></div></div>";
+                  
 
-            $this->roda();
+            $this->roda2();
         }
 
          public function deletarfili(){
             $this->cab();
 
-            echo "<div class='tabelas'><div id='mostra'>
-                <form action='index.php' method='POST'>
-                <fieldset>
-                  <legend>Apague um Produto</legend>
+            echo "<div class='container'>
 
-                  <label for='idFilial'>codigo:</label>
-                  <input type='text' name='idFilial' id='idFilial' class='credo'><br/>
+			<div class='container'>
+
+		<div class='panel-body'></div>
+
+		<div class='col'>
+		<div class='col-sm-4'></div>
+		<div class='col-sm-4'>
+		<h2> Exclua uma Filial</h2>
+		</div>
+		</div>
+		</div>
+					<form action='index.php' method='POST'>
+					<div class='form-group col'>
+					<div class='col-sm-4'></div>
+					<div class='col-sm-4'>
 
 
-                  <input type='hidden' name='classe' value='filial'>
-                  <input type='hidden' name='metodo' value='deletar'>
-                  <input type='submit' value='Apagar' id='but'>
-                  <input type='reset' value='Limpar' id='but'>
-                  </fieldset>
+
+					<div class='form-group'>
+						<input type='text' name='idFilial' id='idFilial' class='form-control' placeholder='Insira o Id de uma Filial'>
+					</div>
+
+
+                 <div class='form-group'>
+						<input type='hidden' name='classe' value='filial'>
+						<input type='hidden' name='metodo' value='deletar'>
+						<div class='col-sm-9'>
+						<button type='submit' class='btn btn-success pull-right' >Excluir</button>
+						</div>
+						<div class='col-sm-3'>
+						<button type='reset' class='btn btn-danger pull-left'>Cancelar</button>
+						</div>
+					</div>
+					</div>
+
                   </form>
-                  </div></div>";
+                  </div>";
 
                   $conexao = new conexaobd("localhost:3306", "root", "", "siscomf");
                   $PDO = $conexao->conecta();
                   $stmt = $PDO->query("select * from filiais");
-                  echo "<div class='tabelas'><table  class='tabela'>
-                            <tr>
-                                <td class='nome1'>NOME</td>
-                                <td class='des1'>rua</td>
-                                <td class='cod1'>numero</td>
-                                <td class='preco1'>bairro</td>
-                                <td class='qtd1'>complemento</td>
-                                <td class='img1'>ID</td>
+                  echo "<div class='container'>
+				  <div class='panel-body'></div>
+		<div class='form-group col'>
+		<h2>Lista de Filiais</h2>
+		</div>
+				  <div class='table-responsive'>
+				  <table class='table'>
+				  <thead>
+							<tr>
+                                <th>Nome</th>
+                                <th>Rua</th>
+                                <th>Número</th>
+                                <th>Bairro</th>
+                                <th>Complemento</th>
+                                <th>Id</th>
                             </tr>
-                        </table></div>";
+                        </thead></div></div> ";
                   while ($result2 = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                      echo "<div class='tabelas'><table>
+                      echo "<tbody>
                                 <tr>
-                                    <td class='nome'>$result2[nome]</td>
-                                    <td class='des'>$result2[rua]</td>
-                                    <td class='cod'>$result2[numero]</td>
-                                    <td class='preco'>$result2[bairro]</td>
-                                    <td class='qtd'>$result2[complemento]</td>
-                                    <td class='img'>$result2[idFilial]</td>
+                                    <td>$result2[nome]</td>
+                                    <td>$result2[rua]</td>
+                                    <td>$result2[numero]</td>
+                                    <td>$result2[bairro]</td>
+                                    <td>$result2[complemento]</td>
+                                    <td>$result2[idFilial]</td>
                                 </tr>
 
 
-                            </table></div>";
-                  }
+                            </tbody>";
+                  }	echo"</table></div></div>";
 
 
             $this->roda();

@@ -1,12 +1,46 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8"/>
-    <link rel="shortcut icon" href="../img/icone.png"/>
-	   <title>CADASTRO DE PRODUTOS</title>
-   </head>
+   <head>
+    <title>Siscomf</title>
+                     <meta charset='UTF-8'>
+                     <link rel='stylesheet' type='text/css' href='../View/Css/produto.css'>
+						<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js'></script>
+  <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
+
+
+    <title>Siscomf</title>
+
+</head>
 
    <body>
+    <nav class=' navbar-inverse'>
+  <div class='container-fluid'>
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class='navbar-header'>
+      <button type='button' class='navbar-toggle collapsed' data-toggle='collapse' data-target='#bs-example-navbar-collapse-1' aria-expanded='false'>
+        <span class='sr-only'>Toggle navigation</span>
+        <span class='icon-bar'></span>
+        <span class='icon-bar'></span>
+        <span class='icon-bar'></span>
+      </button>
+      <a class='navbar-brand' href='#'>Siscomf | Produtos</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class='collapse navbar-collapse' id='bs-example-navbar-collapse-1'>
+      <ul class='nav navbar-nav'>
+	  <li class='active'><a href='Home.php'>Home</a></li>
+        <li class='active'><a href='Produto/lista'>Listar<span class='sr-only'>(current)</span></a></li>
+        <li class='active'><a href='buscarProd.php'>Buscar</a></li>
+		<li class='active'><a href='Produto/novo'>Cadastrar</a></li>
+		<li class='active'><a href='Produto/update'>Alterar</a></li>
+        <li class='active'><a href='Produto/delete'>Excluir</a></li>
+      </ul>
+
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
      <?php
      require_once 'config/conexaobd.php';
      $conexao = new conexaobd("localhost", "root", "", "siscomf");
@@ -19,7 +53,7 @@
          $nomeProd = $dadosP['nomeProd'];
          $qtdProd = $dadosP['qtdProd'];
          $codBarras = $dadosP['codBarras'];
-         $fabricante =$dadosP['fabricante'];
+         $fabricante = $dadosP['fabricante'];
          $precoProd = $dadosP['precoProd'];
          $dataCompra = $dadosP['dataCompra'];
          $dataValidade = $dadosP['dataValidade'];
@@ -29,18 +63,53 @@
      }
 
      ?>
+<div class='container'>
 
-      <h1> <?php echo $nomeProd ?></h1><br>
-       <h1><?php echo $qtdProd ?></h1><br>
-       <h1><?php echo $codBarras ?></h1><br>
-       <h1><?php echo $fabricante ?></h1><br>
-    <h1>  <?php echo $precoProd ?></h1><br>
-    <h1>  <?php echo $dataCompra ?></h1><br>
-    <h1>  <?php echo $dataValidade ?></h1><br>
-    <h1>  <?php echo $categoria ?></h1><br>
-      <h1><?php echo $id ?>
+		<div class='panel-body'></div>
+		<div class='form-group col'>
+		<h2>Produto Localizado</h2>
+		</div>
 
 
+		<div class='table-responsive'>
+		<table class='table'>
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Quantidade</th>
+        <th>Código de Barras</th>
+		<th>Fabricante</th>
+		<th>Preço</th>
+		<th>Data de Compra</th>
+		<th>Data de Validade</th>
+		<th>Categoria</th>
+		<th>Id</th>
+      </tr>
+    </thead>
+	
+                <tbody>
 
+				<tr>
+				<td><?php echo $nomeProd ?></td>
+				<td><?php echo $qtdProd ?></td>
+				<td><?php echo $codBarras ?></td>
+				<td><?php echo $fabricante ?></td>
+				<td><?php echo $precoProd ?></td>
+				<td><?php echo $dataCompra ?></td>
+				<td><?php echo $dataValidade ?></td>
+				<td><?php echo $categoria ?></td>
+				<td><?php echo $id ?></td>
+				</tr>
+
+				</tbody>
+				
+
+					</table></div></div>
+
+					
+	  <div class='panel-footer navbar-fixed-bottom' align='center'>
+	<h6>@Copyright 2018 - CajuWEB</h6>
+	</div>
+	  
    </body>
 </html>
