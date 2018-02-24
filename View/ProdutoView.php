@@ -38,11 +38,7 @@ class ProdutoView{
 		<li class='active'><a href='update'>Alterar</a></li>
         <li class='active'><a href='delete'>Excluir</a></li>
       </ul>
-<<<<<<< HEAD
 
-=======
-           
->>>>>>> cbf6965527f596414fd21f3166cead58d6bdbb61
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
@@ -55,11 +51,7 @@ class ProdutoView{
 		<div class='panel-footer navbar-fixed-bottom' align='center'>
 	<h6>@Copyright 2018 - CajuWEB</h6>
 	</div>
-<<<<<<< HEAD
 
-=======
-		
->>>>>>> cbf6965527f596414fd21f3166cead58d6bdbb61
 		</body>
             </html>";
     }
@@ -68,11 +60,7 @@ class ProdutoView{
 		<div class='panel-footer' align='center'>
 	<h6>@Copyright 2018 - CajuWEB</h6>
 	</div>
-<<<<<<< HEAD
 
-=======
-		
->>>>>>> cbf6965527f596414fd21f3166cead58d6bdbb61
 		</body>
             </html>";
     }
@@ -80,26 +68,15 @@ class ProdutoView{
     public function listaTudo(){
         $this->cab();
         $lista = $_REQUEST['lista'];
-<<<<<<< HEAD
 
 		echo"<div class='container'>
 
-=======
-		
-		echo"<div class='container'>
-		
->>>>>>> cbf6965527f596414fd21f3166cead58d6bdbb61
 		<div class='panel-body'></div>
 		<div class='form-group col'>
 		<h2>Lista de Produtos</h2>
 		</div>
-<<<<<<< HEAD
 
 
-=======
-		
-		
->>>>>>> cbf6965527f596414fd21f3166cead58d6bdbb61
 		<div class='table-responsive'>
 		<table class='table'>
     <thead>
@@ -115,11 +92,7 @@ class ProdutoView{
       </tr>
     </thead>
 	";
-<<<<<<< HEAD
 
-=======
-		
->>>>>>> cbf6965527f596414fd21f3166cead58d6bdbb61
         foreach ($lista as $linha){
             $codBarras = $linha->getCodBarras();
             $nomeProd = $linha->getNomeProd();
@@ -133,11 +106,7 @@ class ProdutoView{
 
             echo "
                 <tbody>
-<<<<<<< HEAD
 
-=======
-				
->>>>>>> cbf6965527f596414fd21f3166cead58d6bdbb61
 				<tr>
 				<td>$nomeProd</td>
 				<td>$codBarras</td>
@@ -147,7 +116,6 @@ class ProdutoView{
 				<td>$dataValidade</td>
 				<td>$dataCompra</td>
 				<td>$categoria</td>
-<<<<<<< HEAD
 
 				</tr>
 
@@ -157,17 +125,6 @@ class ProdutoView{
 
 					</table></div></div>
 
-=======
-				
-				</tr>
-				
-				</tbody>
-				";
-                    } echo"
-					
-					</table></div></div>
-					
->>>>>>> cbf6965527f596414fd21f3166cead58d6bdbb61
 					";
         $this->roda();
     }
@@ -176,21 +133,12 @@ class ProdutoView{
         $this->cab();
 
         echo "
-<<<<<<< HEAD
 
 		<div class='container'>
 		<div class='container'>
 
 		<div class='panel-body'></div>
 
-=======
-   
-		<div class='container'>
-		<div class='container'>
-		
-		<div class='panel-body'></div>
-		
->>>>>>> cbf6965527f596414fd21f3166cead58d6bdbb61
 		<div class='col'>
 		<div class='col-sm-3'></div>
 		<div class='col-sm-6'>
@@ -200,7 +148,6 @@ class ProdutoView{
 		</div>
 		<div class='container'>
         <form method='POST' action='index.php'>
-<<<<<<< HEAD
 
 			<div class='form-group col'>
 					<div class='col-sm-3'></div>
@@ -248,60 +195,10 @@ class ProdutoView{
 
 
 
-=======
-
-			<div class='form-group col'>
-					<div class='col-sm-3'></div>
-					<div class='col-sm-6'>
-					<div class='form-group'>
-						<input type='text' name='nomeProd' id='nomeProd' class='form-control' placeholder='Nome'>
-					</div>
-			
-
-			
-				
-					<div class='form-group'>
-						<input type='text' name='codBarras' id='codBarras' class='form-control' placeholder='Código de Barras'>
-					</div>
-		
-			
-			
-				
-					<div class='form-group'>
-						<input type='text' class='form-control' name='fabricante' id='fabricante' placeholder='Fabricante'>
-					</div>
-			
-			
-			
-			
-					<div class='form-group'>
-						<input type='text' class='form-control' name='precoProd' id='precoProd' placeholder='Preço'>
-					</div>
-			
-			
-			
-			
-					<div class='form-group'>
-						<input type='text' class='form-control' name='qtdProd' id='qtdProd' placeholder='Quantidade'>
-					</div>
-			
-			
-			
-					<div class='form-group'>
-					<label for='dataCompra'>Data de Compra</label>
-					
-						<input type='date' class='form-control' name='dataCompra' id='dataCompra' placeholder='Data de Compra'>
-					</div>
-			
-			
-			
-				
->>>>>>> cbf6965527f596414fd21f3166cead58d6bdbb61
 					<div class='form-group'>
 					<label for='dataValidade'>Data de Validade</label>
 						<input type='date' class='form-control' name='dataValidade' id='dataValidade' placeholder='Data de Validade'>
 					</div>
-<<<<<<< HEAD
 
 
 
@@ -312,18 +209,6 @@ class ProdutoView{
 					</div>
 
 
-=======
-		
-			
-			
-				
-					<div class='form-group'>
-						
-						<input type='text' class='form-control' name='categoria' id='categoria' placeholder='Categoria'>
-					</div>
-			
-			
->>>>>>> cbf6965527f596414fd21f3166cead58d6bdbb61
 				<div class='form-group'>
 						<input type='hidden' name='classe' value='Produto'>
 						<input type='hidden' name='metodo' value='CadastrarProd'>
@@ -337,17 +222,10 @@ class ProdutoView{
 					</div>
 			</div>
 		</form>
-<<<<<<< HEAD
 
 
 		</div>
 		<div class='panel-body'></div>
-=======
-		
-		
-		</div>
-		<div class='panel-body'></div>			
->>>>>>> cbf6965527f596414fd21f3166cead58d6bdbb61
     </div>
     ";
         $this->roda2();
@@ -359,15 +237,9 @@ class ProdutoView{
 
             echo "<div class='container'>
 		<div class='container'>
-<<<<<<< HEAD
 
 		<div class='panel-body'></div>
 
-=======
-		
-		<div class='panel-body'></div>
-		
->>>>>>> cbf6965527f596414fd21f3166cead58d6bdbb61
 		<div class='col'>
 		<div class='col-sm-3'></div>
 		<div class='col-sm-6'>
@@ -375,7 +247,6 @@ class ProdutoView{
 		</div>
 		</div>
 		</div>
-<<<<<<< HEAD
 
 		<div class='container'>
         <form method='POST' action='index.php'>
@@ -433,70 +304,10 @@ class ProdutoView{
 
 
 
-=======
-		
-		<div class='container'>
-        <form method='POST' action='index.php'>
-
-			<div class='form-group col'>
-					<div class='col-sm-3'></div>
-					<div class='col-sm-6'>
-					
-					
-					
-					<div class='form-group'>
-						<input type='text' name='idProd' id='idProd' class='form-control' placeholder='Id'>
-					</div>
-					
-					<div class='form-group'>
-						<input type='text' name='nomeProd' id='nomeProd' class='form-control' placeholder='Nome'>
-					</div>
-			
-
-			
-				
-					<div class='form-group'>
-						<input type='text' name='codBarras' id='codBarras' class='form-control' placeholder='Código de Barras'>
-					</div>
-		
-			
-			
-				
-					<div class='form-group'>
-						<input type='text' class='form-control' name='fabricante' id='fabricante' placeholder='Fabricante'>
-					</div>
-			
-			
-			
-			
-					<div class='form-group'>
-						<input type='text' class='form-control' name='precoProd' id='precoProd' placeholder='Preço'>
-					</div>
-			
-			
-			
-			
-					<div class='form-group'>
-						<input type='text' class='form-control' name='qtdProd' id='qtdProd' placeholder='Quantidade'>
-					</div>
-			
-			
-			
-					<div class='form-group'>
-					<label for='dataCompra'>Data de Compra</label>
-					
-						<input type='date' class='form-control' name='dataCompra' id='dataCompra' placeholder='Data de Compra'>
-					</div>
-			
-			
-			
-				
->>>>>>> cbf6965527f596414fd21f3166cead58d6bdbb61
 					<div class='form-group'>
 					<label for='dataValidade'>Data de Validade</label>
 						<input type='date' class='form-control' name='dataValidade' id='dataValidade' placeholder='Data de Validade'>
 					</div>
-<<<<<<< HEAD
 
 
 
@@ -507,18 +318,6 @@ class ProdutoView{
 					</div>
 
 
-=======
-		
-			
-			
-				
-					<div class='form-group'>
-						
-						<input type='text' class='form-control' name='categoria' id='categoria' placeholder='Categoria'>
-					</div>
-			
-			
->>>>>>> cbf6965527f596414fd21f3166cead58d6bdbb61
 				<div class='form-group'>
 						<input type='hidden' name='classe' value='produto'>
 						<input type='hidden' name='metodo' value='atualizar'>
@@ -533,11 +332,7 @@ class ProdutoView{
 			</div>
 		</form>
 		</div>
-<<<<<<< HEAD
 
-=======
-					
->>>>>>> cbf6965527f596414fd21f3166cead58d6bdbb61
     </div>";
                   $conexao = new conexaobd("localhost:3306", "root", "", "siscomf");
                   $PDO = $conexao->conecta();
@@ -581,19 +376,11 @@ class ProdutoView{
             $this->cab();
 
             echo "<div class='container'>
-<<<<<<< HEAD
 
 			<div class='container'>
 
 		<div class='panel-body'></div>
 
-=======
-			
-			<div class='container'>
-		
-		<div class='panel-body'></div>
-		
->>>>>>> cbf6965527f596414fd21f3166cead58d6bdbb61
 		<div class='col'>
 		<div class='col-sm-4'></div>
 		<div class='col-sm-4'>
@@ -605,7 +392,6 @@ class ProdutoView{
 					<div class='form-group col'>
 					<div class='col-sm-4'></div>
 					<div class='col-sm-4'>
-<<<<<<< HEAD
 
 
 
@@ -614,16 +400,6 @@ class ProdutoView{
 					</div>
 
 
-=======
-					
-					
-					
-					<div class='form-group'>
-						<input type='text' name='idProd' id='idProd' class='form-control' placeholder='Insira o Id do produto'>
-					</div>
-					
-					
->>>>>>> cbf6965527f596414fd21f3166cead58d6bdbb61
                  <div class='form-group'>
 						<input type='hidden' name='classe' value='produto'>
 						<input type='hidden' name='metodo' value='deletar'>
@@ -635,11 +411,7 @@ class ProdutoView{
 						</div>
 					</div>
 					</div>
-<<<<<<< HEAD
 
-=======
-                  
->>>>>>> cbf6965527f596414fd21f3166cead58d6bdbb61
                   </form>
                   </div>";
 
