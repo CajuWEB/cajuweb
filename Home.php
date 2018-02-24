@@ -1,15 +1,23 @@
-<?php
-    class Home{
-        function menu(){
-            echo"
-         <!DOCTYPE HTML>
+
+<!DOCTYPE HTML>
 <html lang='pt-br'>
 <head>
     <title>Menu</title>
 
 
     <link rel='stylesheet' type='text/css'  href='Home.css' />
+    <?php
+    //saindo do sistema
+      if(isset($_POST['sair'])){
+      $sair = $_POST['sair'];
+       if($sair==1){
+           header('Location: login.php');
+        }else{
+           //echo "alert(nada)";
+        }
+      }
 
+    ?>
 </head>
 <body>
 	<ul id='menu'>
@@ -19,11 +27,11 @@
                     <li><a href='Produto/delete'>Deletar Produto</a></li>
 </ul>
 
+<form method="post">
+  <button name="sair" value="1">TESTE</button>
+</form>
 
 
 
 </body>
-</html>";
-
-        }
-    }
+</html>

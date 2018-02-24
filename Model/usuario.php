@@ -3,38 +3,33 @@
     require_once 'config/conexaobd.php';
 
 class usuario {
-    
-    private $id_user;
+
     private $nome;
-    private $sobrenome;
-    private $data_nasc;
-    private $email;
-    private $end;
     private $login;
     private $senha;
-    
-    public function setId_user($id_user) {
-        $this->id_user = $id_user;
+    private $id_usuarios;
+
+//get
+    public function getNome() {
+        return $this->nome;
     }
 
+    public function getLogin() {
+        return $this->login;
+    }
+
+    public function getSenha() {
+        return $this->senha;
+    }
+
+    public function getId_usuarios() {
+        return $this->id_usuarios;
+    }
+
+
+//set
     public function setNome($nome) {
         $this->nome = $nome;
-    }
-
-    public function setSobrenome($sobrenome) {
-        $this->sobrenome = $sobrenome;
-    }
-
-    public function setData_nasc($data_nasc) {
-        $this->data_nasc = $data_nasc;
-    }
-
-    public function setEmail($email) {
-        $this->email = $email;
-    }
-
-    public function setEnd($end) {
-        $this->end = $end;
     }
 
     public function setLogin($login) {
@@ -45,31 +40,56 @@ class usuario {
         $this->senha = $senha;
     }
 
-
-    public function setUsuario($id_user,  $nome, $sobrenome, $data_nasc, $email, $end, $login, $senha){
-        $this->id_user = $id_user;
-        $this->nome = $nome;
-        $this->sobrenome = $sobrenome;
-        $this->data_nasc = $data_nasc;
-        $this->email = $email;
-        $this->end = $end;
-        $this->login = $login;
-        $this->senha = $senha;
+    public function setId_usuarios($id_usuarios) {
+        $this->id_usuarios = $id_usuarios;
     }
 
-    public function __construct($id_user,  $nome, $sobrenome, $data_nasc, $email, $end, $login, $senha) {
-        $this->id_user = $id_user;
+
+    public function setFilial($nome, $login, $senha, $id_usuarios){
         $this->nome = $nome;
-        $this->sobrenome = $sobrenome;
-        $this->data_nasc = $data_nasc;
-        $this->email = $email;
-        $this->end = $end;
         $this->login = $login;
         $this->senha = $senha;
+        $this->id_usuarios = $id_usuarios;
+
+
     }
-    
-    
-    
+
+    public function __construct() {
+
+        $n_args = (int) func_num_args();
+        $args = @func_get_arg();
+
+        if($n_args ==0){
+          $this->nome = " ";
+          $this->login = " ";
+          $this->senha = " ";
+          $this->id_usuarios = " ";
+
+        }
+        if($n_args == 4){
+          //$this->nome = $args[0];
+          $this->nome = $args[0];
+          $this->login = $args[1];
+          $this->senha = $args[2];
+          $this->id_usuarios = $args[3];
+
+        }
+    }
+
+    // public function consultFilial($nome){
+    //     $conexao = new conexaobd("localhost", "root", "", "siscomf");
+    //     $PDO = $conexao->conecta();
+    //     $stmt = $PDO->query("select * from filiais where nome ='$nome'");
+    //     $result = $stmt->fetchAll($PDO::FETCH_ASSOC);
+    //     $this->setNome($result['nome']);
+    //     $this->setIdFilial($result['idFilial']);
+    //     $this->setRua($result['rua']);
+    //     $this->setNumero($result['numero']);
+    //     $this->setBairro($result['bairro']);
+    //     $this->setComplemento($result['complemento']);
+    //
+    // }
+
 }
 
 ?>
