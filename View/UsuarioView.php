@@ -1,40 +1,120 @@
 <?php
 require_once 'config/conexaobd.php';
 
-class FilialView{
+class UsuarioView{
 
     private function cab(){
           echo"
 
                 <html lang='pt-br'>
                     <head>
-                        <title>WF Livros</title>
+                        <title>Siscomf</title>
                         <meta charset='UTF-8'>
                         <link rel='stylesheet' type='text/css' href='../View/Css/produto.css'>
+						<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js'></script>
+  <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
 
                     </head>
-                    <body>";
+                    <body>
+					<nav class=' navbar-inverse'>
+  <div class='container-fluid'>
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class='navbar-header'>
+      <button type='button' class='navbar-toggle collapsed' data-toggle='collapse' data-target='#bs-example-navbar-collapse-1' aria-expanded='false'>
+        <span class='sr-only'>Toggle navigation</span>
+        <span class='icon-bar'></span>
+        <span class='icon-bar'></span>
+        <span class='icon-bar'></span>
+      </button>
+      <a class='navbar-brand' id='produtos' href='#'>Siscomf | Produtos</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class='collapse navbar-collapse' id='bs-example-navbar-collapse-1'>
+      <ul class='nav navbar-nav'>
+	  <li class='active'><a href='../Home.php'>Home</a></li>
+        <li class='active'><a href='lista'>Listar</a></li>
+		<li class='active'><a href='../buscarProd.php'>Buscar</a></li>
+        <li class='active'><a href='novo'>Cadastrar </a></li>
+		<li class='active'><a href='update'>Alterar </a></li>
+        <li class='active'><a href='delete'>Excluir </a></li>
+      </ul>
+
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+					";
     }
 
+
     private function roda(){
-        echo "</body>
+        echo "
+		<div class='panel-footer navbar-fixed-bottom' align='center'>
+	<h6>@Copyright 2018 - CajuWEB</h6>
+	</div>
+
+		</body>
+            </html>";
+    }
+	private function roda2(){
+        echo "
+		<div class='panel-footer' align='center'>
+	<h6>@Copyright 2018 - CajuWEB</h6>
+	</div>
+
+		</body>
             </html>";
     }
 
     public function listaTudo(){
         $this->cab();
         $lista = $_REQUEST['lista'];
+
+		echo"<div class='container'>
+
+		<div class='panel-body'></div>
+		<div class='form-group col'>
+		<h2>Lista de Usuarios</h2>
+		</div>
+
+
+		<div class='table-responsive'>
+		<table class='table'>
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Login</th>
+        <th>Senha</th>
+        <th>ID</th>
+		  </tr>
+    </thead>
+	";
+
         foreach ($lista as $linha){
             $nome = $linha->getNome();
             $login = $linha->getLogin();
             $senha = $linha->getSenha();
+            $id = $linha->getId_usuarios();
 
             echo "
-                  <h1>$nome</h1>
-                  <h1>$login</h1>
-                  <h1>$senha</h1>
-                 ";
-                    }
+                <tbody>
+
+				<tr>
+				<td>$nome</td>
+				<td>$login</td>
+				<td>$senha</td>
+				<td>$id</td>
+
+				</tr>
+
+				</tbody>
+				";
+                    } echo"
+
+					</table></div></div>
+
+					";
         $this->roda();
     }
 
@@ -42,179 +122,281 @@ class FilialView{
         $this->cab();
 
         echo "
-    <div id='mostra'>
+
+		<div class='container'>
+		<div class='container'>
+
+		<div class='panel-body'></div>
+
+		<div class='col'>
+		<div class='col-sm-3'></div>
+		<div class='col-sm-6'>
+		<h2> Cadastrar Usuarios</h2>
+		</div>
+		</div>
+		</div>
+		<div class='container'>
         <form method='POST' action='index.php'>
-            <fieldset>
-            <legend>Grave uma nova filial Produto</legend>
 
-            <label for='nome'> Nome: </label>
-            <input type='text' name='nome' id='nome' class='credo'/><br/><br/>
-
-            <label for='login'> login: </label>
-            <input type='text' name='login' id='login' class='credo'/><br/><br/>
-
-            <label for='senha'> senha: </label>
-            <input type='text' name='senha' id='senha' class='credo'/><br/><br/>
+			<div class='form-group col'>
+					<div class='col-sm-3'></div>
+					<div class='col-sm-6'>
+					<div class='form-group'>
+						<input type='text' name='nome' id='nome' class='form-control' placeholder='Nome'>
+					</div>
 
 
-        <input type='hidden' name='classe' value='Usuario'>
-        <input type='hidden' name='metodo' value='CadastrarUsuario'>
-        <button type='submit' id='but'>Inserir</button>
-        <button type='reset' id='but'>Limpar</button>
-        </form>
-    </div>";
-        $this->roda();
+
+
+					<div class='form-group'>
+						<input type='text' name='login' id='login' class='form-control' placeholder='Login'>
+					</div>
+
+
+
+
+					<div class='form-group'>
+						<input type='password' class='form-control' name='senha' id='senha' placeholder='Senha'>
+					</div>
+
+				<div class='form-group'>
+						<input type='hidden' name='classe' value='Usuario'>
+						<input type='hidden' name='metodo' value='CadastrarUser'>
+						<div class='form-group'>
+						<div class='col-sm-9'>
+						<button type='submit' class='btn btn-success pull-right'>Cadastrar</button>
+						</div>
+						<div class='col-sm-3'>
+						<button type='reset' class='btn btn-danger pull-right'>Cancelar</button>
+						</div>
+						</div>
+					</div>
+					</div>
+			</div>
+		</form>
+
+
+		</div>
+		<div class='panel-body'></div>
+    </div>
+    ";
+        $this->roda2();
 
     }
-   public function atualizarUsuario(){
+   public function atualizarUser(){
 
             $this->cab();
 
-            echo "<div class='tabelas'><div id='mostra'>
-                  <form action='index.php' method='POST' class='formulario'>
-                  <fieldset>
+            echo "<div class='container'>
+		<div class='container'>
 
-                  <legend>Atualize o Produto</legend>
+		<div class='panel-body'></div>
 
-                  <label for='id_usuarios'> id_usuarios: </label>
-                  <input type='text' name='id_usuarios' id='id_usuarios' class='credo'/><br/><br/>
+		<div class='col'>
+		<div class='col-sm-3'></div>
+		<div class='col-sm-6'>
+		<h2> Alterar Usuario</h2>
+		</div>
+		</div>
+		</div>
 
-                  <label for='nome'> nome: </label>
-                  <input type='text' name='nome' id='nome' class='credo'/><br/><br/>
+		<div class='container'>
+        <form method='POST' action='index.php'>
 
-                  <label for='login'> login: </label>
-                  <input type='text' name='login' id='login' class='credo'/><br/><br/>
-
-                  <label for='senha'> senha: </label>
-                  <input type='text' name='senha' id='senha' class='credo'/><br/><br/>
+			<div class='form-group col'>
+					<div class='col-sm-3'></div>
+					<div class='col-sm-6'>
 
 
-                  <input type='hidden' name='classe' value='usuario'>
-                  <input type='hidden' name='metodo' value='atualizar'>
-                  <input type='submit' value='ENVIAR' id='but'>
-                  <input type='reset' value='APAGAR' id='but'>
-                  </fieldset>
-                  </form>
-                  </div></div>";
+
+					<div class='form-group'>
+						<input type='text' name='id_usuarios' id='id_usuarios' class='form-control' placeholder='Id'>
+					</div>
+
+					<div class='form-group'>
+						<input type='text' name='nome' id='nome' class='form-control' placeholder='Nome'>
+					</div>
+
+					<div class='form-group'>
+						<input type='text' name='login' id='login' class='form-control' placeholder='login'>
+					</div>
+
+					<div class='form-group'>
+						<input type='password' class='form-control' name='senha' id='senha' placeholder='senha'>
+					</div>
+
+
+				<div class='form-group'>
+						<input type='hidden' name='classe' value='Usuario'>
+						<input type='hidden' name='metodo' value='atualizar'>
+						<div class='col-sm-9'>
+						<button type='submit' class='btn btn-success pull-right' >Atualizar</button>
+						</div>
+						<div class='col-sm-3'>
+						<button type='reset' class='btn btn-danger pull-right'>Cancelar</button>
+						</div>
+					</div>
+					</div>
+			</div>
+		</form>
+		</div>
+
+    </div>";
                   $conexao = new conexaobd("localhost:3306", "root", "", "siscomf");
                   $PDO = $conexao->conecta();
                   $stmt = $PDO->query("select * from usuarios");
-                  echo "<div class='tabelas'><table  class='tabela'>
-                            <tr>
-                                <td class='nome1'>NOME</td>
-                                <td class='des1'>login</td>
-                                <td class='cod1'>senha</td>
-                                <td class='img1'>ID</td>
+                  echo "<div class='container'>
+				  <div class='panel-body'></div>
+		<div class='form-group col'>
+		<h2>Lista de Produtos</h2>
+		</div>
+				  <div class='table-responsive'>
+				  <table class='table'>
+				  <thead>
+							<tr>
+                                <th>Nome</th>
+                                <th>Login</th>
+                                <th>Senha</th>
+                                <th>Id</th>
                             </tr>
-                        </table></div>";
+                        </thead></div></div> ";
                   while ($result2 = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                      echo "<div class='tabelas'><table>
+                      echo "<tbody>
                                 <tr>
-                                    <td class='nome'>$result2[nome]</td>
-                                    <td class='des'>$result2[login]</td>
-                                    <td class='preco'>$result2[senha]</td>
-                                    <td class='img'>$result2[id_usuarios]</td>
+                                    <td>$result2[nome]</td>
+                                    <td>$result2[login]</td>
+                                    <td>$result2[senha]</td>
+                                    <td>$result2[id_usuarios]</td>
                                 </tr>
 
 
-                            </table></div>";
-                  }
+                            </tbody>";
+                  }	echo"</table></div></div>";
 
-            $this->roda();
+            $this->roda2();
         }
 
          public function deletarUser(){
             $this->cab();
 
-            echo "<div class='tabelas'><div id='mostra'>
-                <form action='index.php' method='POST'>
-                <fieldset>
-                  <legend>Apague um Produto</legend>
+            echo "<div class='container'>
 
-                  <label for='id_usuarios'>codigo:</label>
-                  <input type='text' name='id_usuarios' id='id_usuarios' class='credo'><br/>
+			<div class='container'>
+
+		<div class='panel-body'></div>
+
+		<div class='row'>
+		<div class='col-sm-3'></div>
+		<div class='col-sm-6'>
+		<h2> Exclua um Usuario</h2>
+		</div>
+		</div>
+		</div>
+					<form action='index.php' method='POST'>
+					<div class='form-group col'>
+					<div class='col-sm-3'></div>
+					<div class='col-sm-6'>
 
 
-                  <input type='hidden' name='classe' value='usuario'>
-                  <input type='hidden' name='metodo' value='deletar'>
-                  <input type='submit' value='Apagar' id='but'>
-                  <input type='reset' value='Limpar' id='but'>
-                  </fieldset>
+
+					<div class='form-group'>
+						<input type='text' name='id_usuarios' id='id_usuarios' class='form-control' placeholder='Insira o Id do Usuario'>
+					</div>
+
+
+                 <div class='form-group'>
+						<input type='hidden' name='classe' value='Usuario'>
+						<input type='hidden' name='metodo' value='deletar'>
+						<div class='col-sm-9'>
+						<button type='submit' class='btn btn-success pull-right' >Excluir</button>
+						</div>
+						<div class='col-sm-3'>
+						<button type='reset' class='btn btn-danger pull-left'>Cancelar</button>
+						</div>
+					</div>
+					</div>
+
                   </form>
-                  </div></div>";
+                  </div>";
 
                   $conexao = new conexaobd("localhost:3306", "root", "", "siscomf");
                   $PDO = $conexao->conecta();
                   $stmt = $PDO->query("select * from usuarios");
-                  echo "<div class='tabelas'><table  class='tabela'>
-                            <tr>
-                                <td class='nome1'>NOME</td>
-                                <td class='des1'>login</td>
-                                <td class='cod1'>senha</td>
-                                <td class='img1'>ID</td>
+                  echo "<div class='container'>
+				  <div class='panel-body'></div>
+		<div class='form-group col'>
+		<h2>Lista de Produtos</h2>
+		</div>
+				  <div class='table-responsive'>
+				  <table class='table'>
+				  <thead>
+							<tr>
+                                <th>Nome</th>
+                                <th>Login</th>
+                                <th>Senha</th>
+                                <th>Id</th>
                             </tr>
-                        </table></div>";
+                        </thead></div></div> ";
                   while ($result2 = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                      echo "<div class='tabelas'><table>
+                      echo "<tbody>
                                 <tr>
-                                    <td class='nome'>$result2[nome]</td>
-                                    <td class='des'>$result2[login]</td>
-                                    <td class='cod'>$result2[senha]</td>
-                                    <td class='img'>$result2[id_usuarios]</td>
+                                    <td>$result2[nome]</td>
+                                    <td>$result2[login]</td>
+                                    <td>$result2[senha]</td>
+                                    <td>$result2[id_usuarios]</td>
                                 </tr>
 
 
-                            </table></div>";
-                  }
-
+                            </tbody>";
+                  }	echo"</table></div></div>";
 
             $this->roda();
         }
 
 
         //consulta
-       //  public function consultarProd(){
-       //     $this->cab();
-       //
-       //     echo "<div class='tabelas'><div id='mostra'>
-       //         <form action='index.php' method='POST'>
-       //         <fieldset>
-       //           <legend>Busque um produto</legend>
-       //
-       //           <label for='nomeProd'>nome:</label>
-       //           <input type='text' name='nomeProd' id='nomeProd' class='credo' value='igor'><br/>
-       //
-       //
-       //           <input type='hidden' name='classe' value='produto'>
-       //           <input type='hidden' name='metodo' value='consulta'>
-       //           <input type='submit' value='Consultar' id='but'>
-       //           <input type='reset' value='Limpar' id='but'>
-       //           </fieldset>
-       //           </form>
-       //           </div></div>";
-       //
-       //
-       //           echo "<div class='tabelas'><table  class='tabela'>
-       //                     <tr>
-       //                         <td class='nome1'>NOME</td>
-       //                         <td class='des1'>FABRICANTE</td>
-       //                         <td class='cod1'>PREÇO</td>
-       //                         <td class='preco1'>DATA V</td>
-       //                         <td class='qtd1'>DATA C</td>
-       //                         <td class='img1'>ID</td>
-       //                     </tr>
-       //                 </table></div>
-       //
-       //
-       //
-       //                     </table></div>
-       //                     <h1></h1>";
-       //
-       //
-       //
-       //
-       //     $this->roda();
-       // }
+        public function consultarProd(){
+           $this->cab();
+
+           echo "<div class='tabelas'><div id='mostra'>
+               <form action='index.php' method='POST'>
+               <fieldset>
+                 <legend>Busque um produto</legend>
+
+                 <label for='nomeProd'>nome:</label>
+                 <input type='text' name='nomeProd' id='nomeProd' class='credo' value='igor'><br/>
+
+
+                 <input type='hidden' name='classe' value='produto'>
+                 <input type='hidden' name='metodo' value='consulta'>
+                 <input type='submit' value='Consultar' id='but'>
+                 <input type='reset' value='Limpar' id='but'>
+                 </fieldset>
+                 </form>
+                 </div></div>";
+
+
+                 echo "<div class='tabelas'><table  class='tabela'>
+                           <tr>
+                               <td class='nome1'>NOME</td>
+                               <td class='des1'>FABRICANTE</td>
+                               <td class='cod1'>PREÇO</td>
+                               <td class='preco1'>DATA V</td>
+                               <td class='qtd1'>DATA C</td>
+                               <td class='img1'>ID</td>
+                           </tr>
+                       </table></div>
+
+
+
+                           </table></div>
+                           <h1></h1>";
+
+
+
+
+           $this->roda();
+       }
 
 
 }

@@ -1,9 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8"/>
     <link rel="shortcut icon" href="../img/icone.png"/>
-	   <title>LOGIN</title>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<link href="estilos/loginestilo.css" rel="stylesheet">
+
+	<script src="Java Script/loginjs.js"></script>
+	
+	   <title>Siscomf - Login</title>
    </head>
    <body>
      <?php
@@ -29,24 +38,50 @@
         if($result->rowCount()==1){
           header('Location: Home.php');
         } else {
-            echo "<script type'text/javascript'>
-                    alert('senha ou usuario incorreto')
-                  </script>";
+            echo "<div class='alert alert-danger fade in'><strong>Ops!</strong> parece que o <strong>Nome</strong> ou a <strong>Senha</strong> está errada.</div>";
         }
     }
 ?>
 
 
-<form action="login.php" method="post">
-  <div id="caixalgn">
-<div id="caixa">
-    <div id="login"><span id="txtinput">login: </span><input class="input" name="login" type="text"><br/>
-      <span id="txtinput2">Senha: </span><input class="input" name="senha" type="password"> <br/>
-    <input id="botao" type="submit" value="Enviar"><br/>
 
-</div></div>
-
-</form>
+<section id="login">
+    <div class="container">
+    	<div class="row">
+    	    <div class="col-xs-12">
+        	    <div class="form-wrap">
+                <h1>Siscomf - Login</h1>
+                    <form action="login.php" method="post">
+                        <div class="form-group">
+                            <label for="login" class="sr-only">luiz</label>
+                            <input type="text" name="login"  class="form-control" placeholder="Exemplo123">
+                        </div>
+                        <div class="form-group">
+                            <label for="senha" class="sr-only">senha</label>
+                            <input type="password" name="senha" id="senha" class="form-control" placeholder="Senha">
+                        </div>
+                        <div class="checkbox">
+                            <span class="character-checkbox" onclick="showPassword()"></span>
+                            <span class="label">Mostrar senha</span>
+                        </div>
+                        <input type="submit" id="botao" class="btn btn-custom btn-lg btn-block" value="Entrar">
+                    </form>
+                    
+                    <hr>
+        	    </div>
+    		</div> <!-- /.col-xs-12 -->
+    	</div> <!-- /.row -->
+    </div> <!-- /.container -->
+</section>
+<footer id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <p>CajuWEB © - 2018</p>
+                            </div>
+        </div>
+    </div>
+</footer>
 
 
    </body>

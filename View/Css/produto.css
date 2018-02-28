@@ -1,6 +1,8 @@
 /* formatação de imagens */
 @charset "UTF-8";
 
+
+
 figure.foto-legenda{
   position: relative;  
   border-radius: 2px solid white;

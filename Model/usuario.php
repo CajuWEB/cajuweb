@@ -8,7 +8,6 @@ class usuario {
     private $login;
     private $senha;
     private $id_usuarios;
-
 //get
     public function getNome() {
         return $this->nome;
@@ -25,7 +24,6 @@ class usuario {
     public function getId_usuarios() {
         return $this->id_usuarios;
     }
-
 
 //set
     public function setNome($nome) {
@@ -45,12 +43,11 @@ class usuario {
     }
 
 
-    public function setFilial($nome, $login, $senha, $id_usuarios){
+    public function setUsuario($nome, $login, $senha, $id_usuarios){
         $this->nome = $nome;
         $this->login = $login;
         $this->senha = $senha;
         $this->id_usuarios = $id_usuarios;
-
 
     }
 
@@ -66,27 +63,28 @@ class usuario {
           $this->id_usuarios = " ";
 
         }
-        if($n_args == 4){
-          //$this->nome = $args[0];
+        if($n_args == 3){
           $this->nome = $args[0];
-          $this->login = $args[1];
-          $this->senha = $args[2];
-          $this->id_usuarios = $args[3];
-
+          $this->login = $args[0];
+          $this->senha = $args[0];
+          $this->id_usuarios = $args[0];
         }
     }
 
-    // public function consultFilial($nome){
+    // public function consultProd($nomeProd){
     //     $conexao = new conexaobd("localhost", "root", "", "siscomf");
     //     $PDO = $conexao->conecta();
-    //     $stmt = $PDO->query("select * from filiais where nome ='$nome'");
+    //     $stmt = $PDO->query("select * from produtos where nome = '$nomeProd'");
     //     $result = $stmt->fetchAll($PDO::FETCH_ASSOC);
-    //     $this->setNome($result['nome']);
-    //     $this->setIdFilial($result['idFilial']);
-    //     $this->setRua($result['rua']);
-    //     $this->setNumero($result['numero']);
-    //     $this->setBairro($result['bairro']);
-    //     $this->setComplemento($result['complemento']);
+    //     $this->setCodBarras($result['codBarras']);
+    //     $this->setNomeProd($result['nomoProd']);
+    //     $this->setFabricante($result['fabricante']);
+    //     $this->setPrecoProd($result['precoProd']);
+    //     $this->setQtdProd($result['qtdProd']);
+    //     $this->setDataCompra($result['dataCompra']);
+    //     $this->setDataValidade($result['dataValidade']);
+    //     $this->setCategoria($result['categoria']);
+    //     $this->setIdProd($result['idProd']);
     //
     // }
 

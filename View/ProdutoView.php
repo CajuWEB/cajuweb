@@ -27,16 +27,18 @@ class ProdutoView{
         <span class='icon-bar'></span>
         <span class='icon-bar'></span>
       </button>
-      <a class='navbar-brand' href='#'>Frigorífico Fernandes</a>
+      <a class='navbar-brand' id='produtos' href='#'>Siscomf | Produtos</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class='collapse navbar-collapse' id='bs-example-navbar-collapse-1'>
       <ul class='nav navbar-nav'>
-        <li class='active'><a href='lista'>Listar<span class='sr-only'>(current)</span></a></li>
-        <li class='active'><a href='novo'>Cadastrar</a></li>
-		<li class='active'><a href='update'>Alterar</a></li>
-        <li class='active'><a href='delete'>Excluir</a></li>
+	  <li class='active'><a href='../Home.php'>Home</a></li>
+        <li class='active'><a href='lista'>Listar</a></li>
+		<li class='active'><a href='../buscarProd.php'>Buscar</a></li>
+        <li class='active'><a href='novo'>Cadastrar </a></li>
+		<li class='active'><a href='update'>Alterar </a></li>
+        <li class='active'><a href='delete'>Excluir </a></li>
       </ul>
 
     </div><!-- /.navbar-collapse -->
@@ -111,7 +113,7 @@ class ProdutoView{
 				<td>$nomeProd</td>
 				<td>$codBarras</td>
 				<td>$fabricante</td>
-				<td>$precoProd</td>
+				<td>R$ $precoProd</td>
 				<td>$qtdProd</td>
 				<td>$dataValidade</td>
 				<td>$dataCompra</td>
@@ -142,7 +144,7 @@ class ProdutoView{
 		<div class='col'>
 		<div class='col-sm-3'></div>
 		<div class='col-sm-6'>
-		<h2> Cadastrar de Produtos</h2>
+		<h2> Cadastrar Produto</h2>
 		</div>
 		</div>
 		</div>
@@ -212,11 +214,13 @@ class ProdutoView{
 				<div class='form-group'>
 						<input type='hidden' name='classe' value='Produto'>
 						<input type='hidden' name='metodo' value='CadastrarProd'>
+						<div class='form-group'>
 						<div class='col-sm-9'>
 						<button type='submit' class='btn btn-success pull-right'>Cadastrar</button>
 						</div>
 						<div class='col-sm-3'>
 						<button type='reset' class='btn btn-danger pull-right'>Cancelar</button>
+						</div>
 						</div>
 					</div>
 					</div>
@@ -243,7 +247,7 @@ class ProdutoView{
 		<div class='col'>
 		<div class='col-sm-3'></div>
 		<div class='col-sm-6'>
-		<h2> Alterar de Produtos</h2>
+		<h2> Alterar Produto</h2>
 		</div>
 		</div>
 		</div>
@@ -381,17 +385,17 @@ class ProdutoView{
 
 		<div class='panel-body'></div>
 
-		<div class='col'>
-		<div class='col-sm-4'></div>
-		<div class='col-sm-4'>
+		<div class='row'>
+		<div class='col-sm-3'></div>
+		<div class='col-sm-6'>
 		<h2> Exclua um Produto</h2>
 		</div>
 		</div>
 		</div>
 					<form action='index.php' method='POST'>
 					<div class='form-group col'>
-					<div class='col-sm-4'></div>
-					<div class='col-sm-4'>
+					<div class='col-sm-3'></div>
+					<div class='col-sm-6'>
 
 
 
@@ -407,7 +411,7 @@ class ProdutoView{
 						<button type='submit' class='btn btn-success pull-right' >Excluir</button>
 						</div>
 						<div class='col-sm-3'>
-						<button type='reset' class='btn btn-danger pull-right'>Cancelar</button>
+						<button type='reset' class='btn btn-danger pull-left'>Cancelar</button>
 						</div>
 					</div>
 					</div>
@@ -415,7 +419,7 @@ class ProdutoView{
                   </form>
                   </div>";
 
-                   $conexao = new conexaobd("localhost:3306", "root", "", "siscomf");
+                  $conexao = new conexaobd("localhost:3306", "root", "", "siscomf");
                   $PDO = $conexao->conecta();
                   $stmt = $PDO->query("select * from produtos");
                   echo "<div class='container'>
@@ -450,8 +454,7 @@ class ProdutoView{
                             </tbody>";
                   }	echo"</table></div></div>";
 
-
-            $this->roda2();
+            $this->roda();
         }
 
 

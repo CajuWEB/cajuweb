@@ -9,31 +9,30 @@ class UsuarioController{
     }
 
     public function lista(){
-        $uDAO = new usuarioDAO();
-        $lista = $uDAO->retornatudo();
+        $fDAO = new usuarioDAO();
+        $lista = $fDAO->retornatudo();
         $_REQUEST['lista'] = $lista;
-        $uView = new UsuarioView();
-        $uView->listaTudo();
+        $fView = new UsuarioView();
+        $fView->listaTudo();
     }
 
-    public function CadastrarUsuario(){
+    public function CadastrarUser(){
         if($_SERVER['REQUEST_METHOD']==='POST'){
 
         $user = new usuario();
         $user->setNome($_POST['nome']);
         $user->setLogin($_POST['login']);
         $user->setSenha($_POST['senha']);
-        $user->setId_usuarios($_POST['id_usuarios']);
+
 
 
         $uDAO = new usuarioDAO();
         $uDAO->inserir($user);
-        echo "<script>alert('FILIAL CADASTRADO')</script>";
+        echo "<script>alert('Usuario CADASTRADO')</script>";
         echo"<script> history.go(-2)</script>";
 
         }
     }
-
     public function novo(){
         $uView = new UsuarioView();
         $uView->inserirUsuario();
@@ -53,19 +52,19 @@ class UsuarioController{
                 $user->setNome($_POST['nome']);
                 $user->setLogin($_POST['login']);
                 $user->setSenha($_POST['senha']);
+                $user->setId_usuarios($_POST['id_usuarios']);
 
                 $uDAO = new usuarioDAO();
                 $uDAO->atualizarUser($user);
 
-                echo "<script>alert('filial ATUALIZADO')</script>";
+                echo "<script>alert('Usuario ATUALIZADO')</script>";
                 echo"<script> history.go(-2)</script>";
 
             }
         }
-
          function update(){
             $uVIEW = new UsuarioView();
-            $uVIEW->atualizarUsuario();
+            $uVIEW->atualizarUser();
           }
 
           function delete(){
@@ -81,37 +80,37 @@ class UsuarioController{
 
                 $uDAO = new usuarioDAO();
                 $uDAO->excluir($user);
-                echo "<script>alert('Produto DELETADO')</script>";
+                echo "<script>alert('Usuario DELETADO')</script>";
                 echo"<script> history.go(-2)</script>";
 
           }
           }
 
 
-          //
-          // public function consulta(){
-          //     $pDAO = new produtoDAO();
-          //     $lista = $pDAO->retornaProd();
-          //     $_REQUEST['lista'] = $lista;
-          //     $pView = new ProdutoView();
-          //     $pView->consultarProd();
-          //
-          // }
-          //
-          // function consultar(){
-          //   $prod= new produto();
-          //     if($_SERVER['REQUEST_METHOD']=='POST'){
-          //
-          //       $prod->setNomeProd($_POST['nomeProd']);
-          //
-          //       $pDAO = new produtoDAO();
-          //       $pDAO->buscar($prod);
-          //       echo "<script>alert('Produto Buscado')</script>";
-          //       //echo"<script> history.go(-2)</script>";
-          //       //$nomeProd = $stmt['nomeProd'];
-          //
-          //   }
-          // }
+
+          public function consulta(){
+              $pDAO = new produtoDAO();
+              $lista = $pDAO->retornaProd();
+              $_REQUEST['lista'] = $lista;
+              $pView = new ProdutoView();
+              $pView->consultarProd();
+
+          }
+
+          function consultar(){
+            $prod= new produto();
+              if($_SERVER['REQUEST_METHOD']=='POST'){
+
+                $prod->setNomeProd($_POST['nomeProd']);
+
+                $pDAO = new produtoDAO();
+                $pDAO->buscar($prod);
+                echo "<script>alert('Produto Buscado')</script>";
+                //echo"<script> history.go(-2)</script>";
+                //$nomeProd = $stmt['nomeProd'];
+
+            }
+          }
 
 
 

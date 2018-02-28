@@ -32,7 +32,7 @@ class ProdutoController{
         $pDAO = new produtoDAO();
         $pDAO->inserir($prod);
         echo "<script>alert('Produto CADASTRADO')</script>";
-        echo"<script> history.go(-2)</script>";
+        echo"<script> history.go(-1)</script>";
 
         }
     }

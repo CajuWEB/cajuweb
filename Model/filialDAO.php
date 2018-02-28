@@ -59,7 +59,7 @@ class filialDAO {
             $complemento=$fili->getComplemento();
 
 
-            $q = "UPDATE filial SET nome='$nome', rua='$rua', numero='$numero', bairro='$bairro', complemento='$complemento'
+            $q = "UPDATE filiais SET nome='$nome', rua='$rua', numero='$numero', bairro='$bairro', complemento='$complemento'
                   WHERE idFilial=$idFilial";
 
             $conex = new conexaobd("localhost:3306", "root", "", "siscomf");
