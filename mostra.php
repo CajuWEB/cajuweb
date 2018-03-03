@@ -49,18 +49,18 @@
 
      $dados_produtos = $PDO->query("SELECT * FROM produtos WHERE nomeProd='$nome'");
 
-     foreach ($dados_produtos as $dadosP) {
-         $nomeProd = $dadosP['nomeProd'];
-         $qtdProd = $dadosP['qtdProd'];
-         $codBarras = $dadosP['codBarras'];
-         $fabricante = $dadosP['fabricante'];
-         $precoProd = $dadosP['precoProd'];
-         $dataCompra = $dadosP['dataCompra'];
-         $dataValidade = $dadosP['dataValidade'];
-         $categoria = $dadosP['categoria'];
-         $id = $dadosP['idProd'];
+        foreach ($dados_produtos as $dadosP) {
+           $nomeProd = $dadosP['nomeProd'];
+           $qtdProd = $dadosP['qtdProd'];
+           $codBarras = $dadosP['codBarras'];
+           $fabricante = $dadosP['fabricante'];
+           $precoProd = $dadosP['precoProd'];
+           $dataCompra = $dadosP['dataCompra'];
+           $dataValidade = $dadosP['dataValidade'];
+           $categoria = $dadosP['categoria'];
+           $id = $dadosP['idProd'];
+       }
 
-     }
 
      ?>
 <div class='container'>
@@ -78,38 +78,92 @@
         <th>Nome</th>
         <th>Quantidade</th>
         <th>Código de Barras</th>
-		<th>Fabricante</th>
-		<th>Preço</th>
-		<th>Data de Compra</th>
-		<th>Data de Validade</th>
-		<th>Categoria</th>
-		<th>Id</th>
+    		<th>Fabricante</th>
+    		<th>Preço</th>
+    		<th>Data de Compra</th>
+    		<th>Data de Validade</th>
+    		<th>Categoria</th>
+    		<th>Id</th>
       </tr>
     </thead>
-	
+
                 <tbody>
 
 				<tr>
-				<td><?php echo $nomeProd ?></td>
-				<td><?php echo $qtdProd ?></td>
-				<td><?php echo $codBarras ?></td>
-				<td><?php echo $fabricante ?></td>
-				<td><?php echo $precoProd ?></td>
-				<td><?php echo $dataCompra ?></td>
-				<td><?php echo $dataValidade ?></td>
-				<td><?php echo $categoria ?></td>
-				<td><?php echo $id ?></td>
+				<td><?php if(empty($nomeProd)){
+                     echo "Não cadastrado";
+                   }else {
+                      echo $nomeProd;
+                   }
+             ?>
+        </td>
+				<td><?php if(empty($qtdProd)){
+                     echo "Não cadastrado";
+                   }else {
+                      echo $qtdProd;
+                   }
+             ?>
+        </td>
+				<td><?php if(empty($codBarras)){
+                     echo "Não cadastrado";
+                   }else {
+                      echo $codBarras;
+                   }
+             ?>
+        </td>
+				<td><?php if(empty($fabricante)){
+                     echo "Não cadastrado";
+                   }else {
+                      echo $fabricante;
+                   }
+             ?>
+        </td>
+				<td><?php if(empty($precoProd)){
+                     echo "Não cadastrado";
+                   }else {
+                      echo $precoProd;
+                   }
+             ?>
+        </td>
+				<td><?php if(empty($dataCompra)){
+                     echo "Não cadastrado";
+                   }else {
+                      echo $dataCompra;
+                   }
+             ?>
+        </td>
+				<td><?php if(empty($dataValidade)){
+                     echo "Não cadastrado";
+                   }else {
+                      echo $dataValidade;
+                   }
+             ?>
+        </td>
+				<td><?php if(empty($categoria)){
+                     echo "Não cadastrado";
+                   }else {
+                      echo $categoria;
+                   }
+             ?>
+        </td>
+				<td><?php if(empty($id)){
+                     echo "Não cadastrado";
+                   }else {
+                      echo $id;
+                   }
+             ?>
+        </td>
 				</tr>
 
 				</tbody>
-				
+
 
 					</table></div></div>
 
-					
+
 	  <div class='panel-footer navbar-fixed-bottom' align='center'>
 	<h6>@Copyright 2018 - CajuWEB</h6>
 	</div>
-	  
+
    </body>
 </html>

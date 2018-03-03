@@ -9,11 +9,11 @@ class FilialController{
     }
 
     public function lista(){
-        $pDAO = new filialDAO();
-        $lista = $pDAO->retornatudo();
+        $fDAO = new filialDAO();
+        $lista = $fDAO->retornatudo();
         $_REQUEST['lista'] = $lista;
-        $pView = new filialView();
-        $pView->listaTudo();
+        $fView = new filialView();
+        $fView->listaTudo();
     }
 
     public function CadastrarFilial(){
