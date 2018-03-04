@@ -14,6 +14,7 @@ class UsuarioView{
 						<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
   <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js'></script>
   <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
+  <script src='../Java Script/validator.min.js'></script>
 
                     </head>
                     <body>
@@ -27,7 +28,7 @@ class UsuarioView{
         <span class='icon-bar'></span>
         <span class='icon-bar'></span>
       </button>
-      <a class='navbar-brand' id='produtos' href='#'>Siscomf | Produtos</a>
+      <a class='navbar-brand' href='#'>Siscomf | Usuários</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -35,7 +36,6 @@ class UsuarioView{
       <ul class='nav navbar-nav'>
 	  <li class='active'><a href='../Home.php'>Home</a></li>
         <li class='active'><a href='lista'>Listar</a></li>
-		<li class='active'><a href='../buscarProd.php'>Buscar</a></li>
         <li class='active'><a href='novo'>Cadastrar </a></li>
 		<li class='active'><a href='update'>Alterar </a></li>
         <li class='active'><a href='delete'>Excluir </a></li>
@@ -75,7 +75,7 @@ class UsuarioView{
 
 		<div class='panel-body'></div>
 		<div class='form-group col'>
-		<h2>Lista de Usuarios</h2>
+		<h2>Lista de Usuários</h2>
 		</div>
 
 
@@ -131,32 +131,35 @@ class UsuarioView{
 		<div class='col'>
 		<div class='col-sm-3'></div>
 		<div class='col-sm-6'>
-		<h2> Cadastrar Usuarios</h2>
+		<h2> Cadastrar Usuário</h2>
 		</div>
 		</div>
 		</div>
 		<div class='container'>
-        <form method='POST' action='index.php'>
+        <form method='POST' action='index.php' data-toggle='validator'>
 
 			<div class='form-group col'>
 					<div class='col-sm-3'></div>
 					<div class='col-sm-6'>
 					<div class='form-group'>
-						<input type='text' name='nome' id='nome' class='form-control' placeholder='Nome'>
+						<input type='text' name='nome' id='nome' class='form-control' placeholder='Nome' data-error='Por favor, informe um Nome.' required>
+						<div class='help-block with-errors'></div>
 					</div>
 
 
 
 
 					<div class='form-group'>
-						<input type='text' name='login' id='login' class='form-control' placeholder='Login'>
+						<input type='text' name='login' id='login' class='form-control' placeholder='Login' data-error='Por favor, informe um Login.' required>
+						<div class='help-block with-errors'></div>
 					</div>
 
 
 
 
 					<div class='form-group'>
-						<input type='password' class='form-control' name='senha' id='senha' placeholder='Senha'>
+						<input type='password' class='form-control' name='senha' id='senha' placeholder='Senha' data-error='Por favor, informe uma Senha.' required>
+						<div class='help-block with-errors'></div>
 					</div>
 
 				<div class='form-group'>
@@ -180,7 +183,7 @@ class UsuarioView{
 		<div class='panel-body'></div>
     </div>
     ";
-        $this->roda2();
+        $this->roda();
 
     }
    public function atualizarUser(){
@@ -195,13 +198,13 @@ class UsuarioView{
 		<div class='col'>
 		<div class='col-sm-3'></div>
 		<div class='col-sm-6'>
-		<h2> Alterar Usuario</h2>
+		<h2> Alterar Usuário</h2>
 		</div>
 		</div>
 		</div>
 
 		<div class='container'>
-        <form method='POST' action='index.php'>
+        <form method='POST' action='index.php' data-toggle='validator'>
 
 			<div class='form-group col'>
 					<div class='col-sm-3'></div>
@@ -210,19 +213,29 @@ class UsuarioView{
 
 
 					<div class='form-group'>
-						<input type='text' name='id_usuarios' id='id_usuarios' class='form-control' placeholder='Id'>
+						<input type='text' name='id_usuarios' id='id_usuarios' class='form-control' placeholder='Id' data-error='Por favor, informe um Id.' required>
+						<div class='help-block with-errors'></div>
 					</div>
 
 					<div class='form-group'>
-						<input type='text' name='nome' id='nome' class='form-control' placeholder='Nome'>
+						<input type='text' name='nome' id='nome' class='form-control' placeholder='Nome' data-error='Por favor, informe um Nome.' required>
+						<div class='help-block with-errors'></div>
 					</div>
 
-					<div class='form-group'>
-						<input type='text' name='login' id='login' class='form-control' placeholder='login'>
-					</div>
+
+
 
 					<div class='form-group'>
-						<input type='password' class='form-control' name='senha' id='senha' placeholder='senha'>
+						<input type='text' name='login' id='login' class='form-control' placeholder='Login' data-error='Por favor, informe um Login.' required>
+						<div class='help-block with-errors'></div>
+					</div>
+
+
+
+
+					<div class='form-group'>
+						<input type='password' class='form-control' name='senha' id='senha' placeholder='Senha' data-error='Por favor, informe uma Senha.' required>
+						<div class='help-block with-errors'></div>
 					</div>
 
 
@@ -248,7 +261,7 @@ class UsuarioView{
                   echo "<div class='container'>
 				  <div class='panel-body'></div>
 		<div class='form-group col'>
-		<h2>Lista de Produtos</h2>
+		<h2>Lista de Usuários</h2>
 		</div>
 				  <div class='table-responsive'>
 				  <table class='table'>
@@ -271,7 +284,7 @@ class UsuarioView{
 
 
                             </tbody>";
-                  }	echo"</table></div></div>";
+                  }	echo"</table></div></div><div class='panel-body'></div><div class='panel-body'></div>";
 
             $this->roda2();
         }
@@ -288,11 +301,11 @@ class UsuarioView{
 		<div class='row'>
 		<div class='col-sm-3'></div>
 		<div class='col-sm-6'>
-		<h2> Exclua um Usuario</h2>
+		<h2> Exclua um Usuário</h2>
 		</div>
 		</div>
 		</div>
-					<form action='index.php' method='POST'>
+					<form action='index.php' method='POST' data-toggle='validator'>
 					<div class='form-group col'>
 					<div class='col-sm-3'></div>
 					<div class='col-sm-6'>
@@ -300,7 +313,8 @@ class UsuarioView{
 
 
 					<div class='form-group'>
-						<input type='text' name='id_usuarios' id='id_usuarios' class='form-control' placeholder='Insira o Id do Usuario'>
+						<input type='text' name='id_usuarios' id='id_usuarios' class='form-control' placeholder='Insira o Id do Usuario' data-error='Por favor, informe um Id.' required>
+						<div class='help-block with-errors'></div>
 					</div>
 
 
@@ -325,7 +339,7 @@ class UsuarioView{
                   echo "<div class='container'>
 				  <div class='panel-body'></div>
 		<div class='form-group col'>
-		<h2>Lista de Produtos</h2>
+		<h2>Lista de Usuários</h2>
 		</div>
 				  <div class='table-responsive'>
 				  <table class='table'>

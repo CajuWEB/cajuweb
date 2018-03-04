@@ -67,7 +67,13 @@
 
 		<div class='panel-body'></div>
 		<div class='form-group col'>
-		<h2>Produto Localizado</h2>
+		<?php if(empty($nomeProd)){
+                     echo "<h2>Produto não localizado</h2>";
+                   }else {
+                      echo "<h2>Produto Localizado</h2>";
+                   }
+             ?>
+		
 		</div>
 
 

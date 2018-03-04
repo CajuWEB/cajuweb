@@ -15,6 +15,7 @@ class FilialView{
 						<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
 						<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js'></script>
 						<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
+						<script src='../Java Script/validator.min.js'></script>
 
                     </head>
                     <body>
@@ -139,41 +140,46 @@ class FilialView{
 		</div>
 		</div>
 		<div class='container'>
-        <form method='POST' action='index.php'>
+        <form method='POST' action='index.php' data-toggle='validator'>
 
 			<div class='form-group col'>
 					<div class='col-sm-3'></div>
 					<div class='col-sm-6'>
 					<div class='form-group'>
-						<input type='text' name='nome' id='nome' class='form-control' placeholder='Nome'>
+						<input type='text' name='nome' id='nome' class='form-control' placeholder='Nome' data-error='Por favor, informe um Nome.' required>
+						<div class='help-block with-errors'></div>
 					</div>
 
 
 
 
 					<div class='form-group'>
-						<input type='text' name='rua' id='rua' class='form-control' placeholder='Rua'>
+						<input type='text' name='rua' id='rua' class='form-control' placeholder='Rua' data-error='Por favor, informe uma Rua.' required>
+						<div class='help-block with-errors'></div>
 					</div>
 
 
 
 
 					<div class='form-group'>
-						<input type='text' class='form-control' name='numero' id='numero' placeholder='Número'>
+						<input type='text' class='form-control' name='numero' id='numero' placeholder='Número' data-error='Por favor, informe um Número.' required>
+						<div class='help-block with-errors'></div>
 					</div>
 
 
 
 
 					<div class='form-group'>
-						<input type='text' class='form-control' name='bairro' id='bairro' placeholder='Bairro'>
+						<input type='text' class='form-control' name='bairro' id='bairro' placeholder='Bairro' data-error='Por favor, informe um Bairro.' required>
+						<div class='help-block with-errors'></div>
 					</div>
 
 
 
 
 					<div class='form-group'>
-						<input type='text' class='form-control' name='complemento' id='complemento' placeholder='Complemento'>
+						<input type='text' class='form-control' name='complemento' id='complemento' placeholder='Complemento' data-error='Por favor, informe um Complemento.' required>
+						<div class='help-block with-errors'></div>
 					</div>
 
 
@@ -217,7 +223,7 @@ class FilialView{
 		</div>
 
 		<div class='container'>
-        <form method='POST' action='index.php'>
+        <form method='POST' action='index.php' data-toggle='validator'>
 
 			<div class='form-group col'>
 					<div class='col-sm-3'></div>
@@ -226,39 +232,45 @@ class FilialView{
 
 
 					<div class='form-group'>
-						<input type='text' name='idFilial' id='idFilial' class='form-control' placeholder='Id'>
+						<input type='text' name='idFilial' id='idFilial' class='form-control' placeholder='Id' data-error='Por favor, informe um Id.' required>
+						<div class='help-block with-errors'></div>
 					</div>
 
 					<div class='form-group'>
-						<input type='text' name='nome' id='nome' class='form-control' placeholder='Nome'>
-					</div>
-
-
-
-
-					<div class='form-group'>
-						<input type='text' name='rua' id='rua' class='form-control' placeholder='Rua'>
+						<input type='text' name='nome' id='nome' class='form-control' placeholder='Nome' data-error='Por favor, informe um Nome.' required>
+						<div class='help-block with-errors'></div>
 					</div>
 
 
 
 
 					<div class='form-group'>
-						<input type='text' class='form-control' name='numero' id='numero' placeholder='Número'>
+						<input type='text' name='rua' id='rua' class='form-control' placeholder='Rua' data-error='Por favor, informe uma Rua.' required>
+						<div class='help-block with-errors'></div>
 					</div>
 
 
 
 
 					<div class='form-group'>
-						<input type='text' class='form-control' name='bairro' id='bairro' placeholder='Bairro'>
+						<input type='text' class='form-control' name='numero' id='numero' placeholder='Número' data-error='Por favor, informe um Número.' required>
+						<div class='help-block with-errors'></div>
 					</div>
 
 
 
 
 					<div class='form-group'>
-						<input type='text' class='form-control' name='complemento' id='complemento' placeholder='Complemento'>
+						<input type='text' class='form-control' name='bairro' id='bairro' placeholder='Bairro' data-error='Por favor, informe um Bairro.' required>
+						<div class='help-block with-errors'></div>
+					</div>
+
+
+
+
+					<div class='form-group'>
+						<input type='text' class='form-control' name='complemento' id='complemento' placeholder='Complemento' data-error='Por favor, informe um Complemento.' required>
+						<div class='help-block with-errors'></div>
 					</div>
 
 
@@ -334,7 +346,7 @@ class FilialView{
 		</div>
 		</div>
 		</div>
-					<form action='index.php' method='POST'>
+					<form action='index.php' method='POST' data-toggle='validator'>
 					<div class='form-group col'>
 					<div class='col-sm-4'></div>
 					<div class='col-sm-4'>
@@ -342,7 +354,8 @@ class FilialView{
 
 
 					<div class='form-group'>
-						<input type='text' name='idFilial' id='idFilial' class='form-control' placeholder='Insira o Id de uma Filial'>
+						<input type='text' name='idFilial' id='idFilial' class='form-control' placeholder='Insira o Id de uma Filial' data-error='Por favor, informe uma Filial.' required>
+						<div class='help-block with-errors'></div>
 					</div>
 
 

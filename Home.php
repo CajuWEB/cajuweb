@@ -44,6 +44,7 @@
       <ul class='nav navbar-nav'>
         <li class='active'><a href='Produto/lista'>Gerenciar Produtos<span class='sr-only'>(current)</span></a></li>
         <li class='active'><a href='Filial/lista'>Gerenciar Filiais</a></li>
+		<li class='active'><a href='Usuario/lista'>Gerenciar Usuários</a></li>
       </ul>
 	  <ul class="nav navbar-nav navbar-right">
       <form method="post">
@@ -70,7 +71,7 @@
 		</div>
 		
 		<div class='form-group' align='center'>
-		<p>O Siscomf (Sistema Comercial para Frigoríficos) foi feito pela a CajuWEB que tem como seu integrantes Acadêmicos
+		<p>O Siscomf (Sistema Comercial para Frigoríficos) foi feito pela a CajuWEB, que tem como seus integrantes, Acadêmicos
 	do curso de Bacharelado de Sistemas de Informação no Instituto Federal de Ciência e Tecnologia - IFCE, Campus Cedro.</p>
 		</div>
 

@@ -7,7 +7,7 @@
 						<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
   <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js'></script>
   <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
-
+	<script src='Java Script/validator.min.js'></script>
 
     <title>Siscomf</title>
 
@@ -54,7 +54,7 @@
 		</div>
 		</div>
 		</div>
-					<form action='mostra.php' method='POST'>
+					<form action='mostra.php' method='POST' data-toggle='validator'>
 					<div class='form-group col'>
 					<div class='col-sm-3'></div>
 					<div class='col-sm-6'>
@@ -62,7 +62,8 @@
 
 
 					<div class='form-group'>
-						<input type='text' name='nome' id='nome' class='form-control' placeholder='Insira o Id do produto'>
+						<input type='text' name='nome' id='nome' class='form-control' placeholder='Insira o Id do produto' data-error='Por favor, informe um Id.' required>
+						<div class='help-block with-errors'></div>
 					</div>
 
 

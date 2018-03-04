@@ -14,6 +14,7 @@ class ProdutoView{
 						<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
   <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js'></script>
   <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
+  <script src='../Java Script/validator.min.js'></script>
 
                     </head>
                     <body>
@@ -149,41 +150,46 @@ class ProdutoView{
 		</div>
 		</div>
 		<div class='container'>
-        <form method='POST' action='index.php'>
+        <form method='POST' action='index.php' data-toggle='validator'>
 
 			<div class='form-group col'>
 					<div class='col-sm-3'></div>
 					<div class='col-sm-6'>
 					<div class='form-group'>
-						<input type='text' name='nomeProd' id='nomeProd' class='form-control' placeholder='Nome'>
+						<input type='text' name='nomeProd' id='nomeProd' class='form-control' placeholder='Nome' data-error='Por favor, informe um Nome.' required>
+						<div class='help-block with-errors'></div>
 					</div>
 
 
 
 
 					<div class='form-group'>
-						<input type='text' name='codBarras' id='codBarras' class='form-control' placeholder='Código de Barras'>
+						<input type='text' name='codBarras' id='codBarras' class='form-control' placeholder='Código de Barras' data-error='Por favor, informe um Código de Barras.' required>
+						<div class='help-block with-errors'></div>
 					</div>
 
 
 
 
 					<div class='form-group'>
-						<input type='text' class='form-control' name='fabricante' id='fabricante' placeholder='Fabricante'>
+						<input type='text' class='form-control' name='fabricante' id='fabricante' placeholder='Fabricante' data-error='Por favor, informe um Fabricante.' required>
+						<div class='help-block with-errors'></div>
 					</div>
 
 
 
 
 					<div class='form-group'>
-						<input type='text' class='form-control' name='precoProd' id='precoProd' placeholder='Preço'>
+						<input type='text' class='form-control' name='precoProd' id='precoProd' placeholder='Preço' data-error='Por favor, informe um Preço.' required>
+						<div class='help-block with-errors'></div>
 					</div>
 
 
 
 
 					<div class='form-group'>
-						<input type='text' class='form-control' name='qtdProd' id='qtdProd' placeholder='Quantidade'>
+						<input type='text' class='form-control' name='qtdProd' id='qtdProd' placeholder='Quantidade' data-error='Por favor, informe uma Quantidade.' required>
+						<div class='help-block with-errors'></div>
 					</div>
 
 
@@ -191,7 +197,8 @@ class ProdutoView{
 					<div class='form-group'>
 					<label for='dataCompra'>Data de Compra</label>
 
-						<input type='date' class='form-control' name='dataCompra' id='dataCompra' placeholder='Data de Compra'>
+						<input type='date' class='form-control' name='dataCompra' id='dataCompra' placeholder='Data de Compra' data-error='Por favor, informe a Data de Compra.' required>
+						<div class='help-block with-errors'></div>
 					</div>
 
 
@@ -199,7 +206,8 @@ class ProdutoView{
 
 					<div class='form-group'>
 					<label for='dataValidade'>Data de Validade</label>
-						<input type='date' class='form-control' name='dataValidade' id='dataValidade' placeholder='Data de Validade'>
+						<input type='date' class='form-control' name='dataValidade' id='dataValidade' placeholder='Data de Validade' data-error='Por favor, informe a Data de Validade.' required>
+						<div class='help-block with-errors'></div>
 					</div>
 
 
@@ -207,7 +215,8 @@ class ProdutoView{
 
 					<div class='form-group'>
 
-						<input type='text' class='form-control' name='categoria' id='categoria' placeholder='Categoria'>
+						<input type='text' class='form-control' name='categoria' id='categoria' placeholder='Categoria' data-error='Por favor, informe uma Categoria.' required>
+						<div class='help-block with-errors'></div>
 					</div>
 
 
@@ -253,7 +262,7 @@ class ProdutoView{
 		</div>
 
 		<div class='container'>
-        <form method='POST' action='index.php'>
+        <form method='POST' action='index.php' data-toggle='validator'>
 
 			<div class='form-group col'>
 					<div class='col-sm-3'></div>
@@ -262,39 +271,45 @@ class ProdutoView{
 
 
 					<div class='form-group'>
-						<input type='text' name='idProd' id='idProd' class='form-control' placeholder='Id'>
+						<input type='text' name='idProd' id='idProd' class='form-control' placeholder='Id' data-error='Por favor, informe um Id.' required>
+						<div class='help-block with-errors'></div>
 					</div>
 
 					<div class='form-group'>
-						<input type='text' name='nomeProd' id='nomeProd' class='form-control' placeholder='Nome'>
-					</div>
-
-
-
-
-					<div class='form-group'>
-						<input type='text' name='codBarras' id='codBarras' class='form-control' placeholder='Código de Barras'>
+						<input type='text' name='nomeProd' id='nomeProd' class='form-control' placeholder='Nome' data-error='Por favor, informe um Nome.' required>
+						<div class='help-block with-errors'></div>
 					</div>
 
 
 
 
 					<div class='form-group'>
-						<input type='text' class='form-control' name='fabricante' id='fabricante' placeholder='Fabricante'>
+						<input type='text' name='codBarras' id='codBarras' class='form-control' placeholder='Código de Barras' data-error='Por favor, informe um Código de Barras.' required>
+						<div class='help-block with-errors'></div>
 					</div>
 
 
 
 
 					<div class='form-group'>
-						<input type='text' class='form-control' name='precoProd' id='precoProd' placeholder='Preço'>
+						<input type='text' class='form-control' name='fabricante' id='fabricante' placeholder='Fabricante' data-error='Por favor, informe um Fabricante.' required>
+						<div class='help-block with-errors'></div>
 					</div>
 
 
 
 
 					<div class='form-group'>
-						<input type='text' class='form-control' name='qtdProd' id='qtdProd' placeholder='Quantidade'>
+						<input type='text' class='form-control' name='precoProd' id='precoProd' placeholder='Preço' data-error='Por favor, informe um Preço.' required>
+						<div class='help-block with-errors'></div>
+					</div>
+
+
+
+
+					<div class='form-group'>
+						<input type='text' class='form-control' name='qtdProd' id='qtdProd' placeholder='Quantidade' data-error='Por favor, informe uma Quantidade.' required>
+						<div class='help-block with-errors'></div>
 					</div>
 
 
@@ -302,7 +317,8 @@ class ProdutoView{
 					<div class='form-group'>
 					<label for='dataCompra'>Data de Compra</label>
 
-						<input type='date' class='form-control' name='dataCompra' id='dataCompra' placeholder='Data de Compra'>
+						<input type='date' class='form-control' name='dataCompra' id='dataCompra' placeholder='Data de Compra' data-error='Por favor, informe a Data de Compra.' required>
+						<div class='help-block with-errors'></div>
 					</div>
 
 
@@ -310,7 +326,8 @@ class ProdutoView{
 
 					<div class='form-group'>
 					<label for='dataValidade'>Data de Validade</label>
-						<input type='date' class='form-control' name='dataValidade' id='dataValidade' placeholder='Data de Validade'>
+						<input type='date' class='form-control' name='dataValidade' id='dataValidade' placeholder='Data de Validade' data-error='Por favor, informe a Data de Validade.' required>
+						<div class='help-block with-errors'></div>
 					</div>
 
 
@@ -318,7 +335,8 @@ class ProdutoView{
 
 					<div class='form-group'>
 
-						<input type='text' class='form-control' name='categoria' id='categoria' placeholder='Categoria'>
+						<input type='text' class='form-control' name='categoria' id='categoria' placeholder='Categoria' data-error='Por favor, informe uma Categoria.' required>
+						<div class='help-block with-errors'></div>
 					</div>
 
 
@@ -392,7 +410,7 @@ class ProdutoView{
 		</div>
 		</div>
 		</div>
-					<form action='index.php' method='POST'>
+					<form action='index.php' method='POST' data-toggle='validator'>
 					<div class='form-group col'>
 					<div class='col-sm-3'></div>
 					<div class='col-sm-6'>
@@ -400,7 +418,8 @@ class ProdutoView{
 
 
 					<div class='form-group'>
-						<input type='text' name='idProd' id='idProd' class='form-control' placeholder='Insira o Id do produto'>
+						<input type='text' name='idProd' id='idProd' class='form-control' placeholder='Insira o Id do produto' data-error='Por favor, informe um Id.' required>
+						<div class='help-block with-errors'></div>
 					</div>
 
 
