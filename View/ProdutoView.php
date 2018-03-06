@@ -155,20 +155,15 @@ class ProdutoView{
 			<div class='form-group col'>
 					<div class='col-sm-3'></div>
 					<div class='col-sm-6'>
+          <div class='form-group'>
+            <input type='text' name='codBarras' id='codBarras' class='form-control' placeholder='Código de Barras' data-error='Por favor, informe um Código de Barras.' autofocus required>
+            <div class='help-block with-errors'></div>
+          </div>
+
 					<div class='form-group'>
 						<input type='text' name='nomeProd' id='nomeProd' class='form-control' placeholder='Nome' data-error='Por favor, informe um Nome.' required>
 						<div class='help-block with-errors'></div>
 					</div>
-
-
-
-
-					<div class='form-group'>
-						<input type='text' name='codBarras' id='codBarras' class='form-control' placeholder='Código de Barras' data-error='Por favor, informe um Código de Barras.' required>
-						<div class='help-block with-errors'></div>
-					</div>
-
-
 
 
 					<div class='form-group'>
@@ -271,7 +266,7 @@ class ProdutoView{
 
 
 					<div class='form-group'>
-						<input type='text' name='idProd' id='idProd' class='form-control' placeholder='Id' data-error='Por favor, informe um Id.' required>
+						<input type='text' name='idProd' id='idProd' class='form-control' placeholder='Id' data-error='Por favor, informe um Id.' autofocus required>
 						<div class='help-block with-errors'></div>
 					</div>
 
@@ -418,7 +413,7 @@ class ProdutoView{
 
 
 					<div class='form-group'>
-						<input type='text' name='idProd' id='idProd' class='form-control' placeholder='Insira o Id do produto' data-error='Por favor, informe um Id.' required>
+						<input type='text' autofocus name='idProd' id='idProd' class='form-control' placeholder='Insira o Id do produto' data-error='Por favor, informe um Id.' required>
 						<div class='help-block with-errors'></div>
 					</div>
 

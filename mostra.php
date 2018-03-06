@@ -47,7 +47,7 @@
      $PDO = $conexao->conecta();
      $nome = $_POST['nome'];
 
-     $dados_produtos = $PDO->query("SELECT * FROM produtos WHERE nomeProd='$nome'");
+     $dados_produtos = $PDO->query("SELECT * FROM produtos WHERE nomeProd='$nome' OR codBarras='$nome'");
 
         foreach ($dados_produtos as $dadosP) {
            $nomeProd = $dadosP['nomeProd'];
@@ -73,7 +73,7 @@
                       echo "<h2>Produto Localizado</h2>";
                    }
              ?>
-		
+
 		</div>
 
 
