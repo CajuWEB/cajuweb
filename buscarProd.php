@@ -40,7 +40,7 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-     
+
 	 <div class='container'>
 
 			<div class='container'>
@@ -62,7 +62,7 @@
 
 
 					<div class='form-group'>
-						<input type='text' name='nome' id='nome' class='form-control' placeholder='Insira o Id do produto' data-error='Por favor, informe um Id.' required>
+						<input type='text' autofocus name='nome' id='nome' class='form-control' placeholder='Insira o nome ou codigo do produto' data-error='Por favor, informe um Id.' required>
 						<div class='help-block with-errors'></div>
 					</div>
 
@@ -79,10 +79,10 @@
 
                   </form>
                   </div>
-	 
+
 	 <div class='panel-footer navbar-fixed-bottom' align='center'>
 	<h6>@Copyright 2018 - CajuWEB</h6>
 	</div>
-	 
+
    </body>
 </html>
