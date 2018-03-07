@@ -136,7 +136,7 @@ class UsuarioView{
 		</div>
 		</div>
 		<div class='container'>
-        <form method='POST' action='index.php' data-toggle='validator'>
+        <form id='myForm' method='POST' action='index.php' data-toggle='validator'>
 
 			<div class='form-group col'>
 					<div class='col-sm-3'></div>
@@ -177,7 +177,11 @@ class UsuarioView{
 					</div>
 			</div>
 		</form>
-
+				  		<script>
+$('#myForm').each (function(){
+  this.reset();
+});
+</script>
 
 		</div>
 		<div class='panel-body'></div>
@@ -204,7 +208,7 @@ class UsuarioView{
 		</div>
 
 		<div class='container'>
-        <form method='POST' action='index.php' data-toggle='validator'>
+        <form id='myForm' method='POST' action='index.php' data-toggle='validator'>
 
 			<div class='form-group col'>
 					<div class='col-sm-3'></div>
@@ -252,6 +256,11 @@ class UsuarioView{
 					</div>
 			</div>
 		</form>
+						  		<script>
+$('#myForm').each (function(){
+  this.reset();
+});
+</script>
 		</div>
 
     </div>";
@@ -305,7 +314,7 @@ class UsuarioView{
 		</div>
 		</div>
 		</div>
-					<form action='index.php' method='POST' data-toggle='validator'>
+					<form id='myForm' action='index.php' method='POST' data-toggle='validator'>
 					<div class='form-group col'>
 					<div class='col-sm-3'></div>
 					<div class='col-sm-6'>
@@ -331,6 +340,11 @@ class UsuarioView{
 					</div>
 
                   </form>
+				  				  		<script>
+$('#myForm').each (function(){
+  this.reset();
+});
+</script>
                   </div>";
 
                   $conexao = new conexaobd("localhost:3306", "root", "", "siscomf");

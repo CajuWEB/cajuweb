@@ -29,7 +29,7 @@ class UsuarioController{
         $uDAO = new usuarioDAO();
         $uDAO->inserir($user);
         echo "<script>alert('Usuario CADASTRADO')</script>";
-        echo"<script> history.go(-2)</script>";
+        echo"<script> history.go(-1)</script>";
 
         }
     }
@@ -58,7 +58,7 @@ class UsuarioController{
                 $uDAO->atualizarUser($user);
 
                 echo "<script>alert('Usuario ATUALIZADO')</script>";
-                echo"<script> history.go(-2)</script>";
+                echo"<script> history.go(-1)</script>";
 
             }
         }
@@ -81,7 +81,7 @@ class UsuarioController{
                 $uDAO = new usuarioDAO();
                 $uDAO->excluir($user);
                 echo "<script>alert('Usuario DELETADO')</script>";
-                echo"<script> history.go(-2)</script>";
+                echo"<script> history.go(-1)</script>";
 
           }
           }

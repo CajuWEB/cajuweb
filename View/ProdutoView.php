@@ -150,7 +150,7 @@ class ProdutoView{
 		</div>
 		</div>
 		<div class='container'>
-        <form method='POST' action='index.php' data-toggle='validator'>
+        <form id='myForm' method='POST' action='index.php' data-toggle='validator'>
 
 			<div class='form-group col'>
 					<div class='col-sm-3'></div>
@@ -236,6 +236,11 @@ class ProdutoView{
 			</div>
 		</form>
 
+		<script>
+$('#myForm').each (function(){
+  this.reset();
+});
+</script>
 
 		</div>
 		<div class='panel-body'></div>
@@ -262,7 +267,7 @@ class ProdutoView{
 		</div>
 
 		<div class='container'>
-        <form method='POST' action='index.php' data-toggle='validator'>
+        <form id='myForm' method='POST' action='index.php' data-toggle='validator'>
 
 			<div class='form-group col'>
 					<div class='col-sm-3'></div>
@@ -344,7 +349,7 @@ class ProdutoView{
 						<input type='hidden' name='classe' value='produto'>
 						<input type='hidden' name='metodo' value='atualizar'>
 						<div class='col-sm-9'>
-						<button type='submit' class='btn btn-success pull-right' >Atualizar</button>
+						<button type='submit' class='btn btn-success pull-right' onclick='myFunction()'>Atualizar</button>
 						</div>
 						<div class='col-sm-3'>
 						<button type='reset' class='btn btn-danger pull-right'>Cancelar</button>
@@ -353,6 +358,11 @@ class ProdutoView{
 					</div>
 			</div>
 		</form>
+				<script>
+$('#myForm').each (function(){
+  this.reset();
+});
+</script>
 		</div>
 
     </div>";
@@ -410,7 +420,7 @@ class ProdutoView{
 		</div>
 		</div>
 		</div>
-					<form action='index.php' method='POST' data-toggle='validator'>
+					<form id='myForm' action='index.php' method='POST' data-toggle='validator'>
 					<div class='form-group col'>
 					<div class='col-sm-3'></div>
 					<div class='col-sm-6'>
@@ -436,6 +446,11 @@ class ProdutoView{
 					</div>
 
                   </form>
+				  		<script>
+$('#myForm').each (function(){
+  this.reset();
+});
+</script>
                   </div>";
 
                   $conexao = new conexaobd("localhost:3306", "root", "", "siscomf");

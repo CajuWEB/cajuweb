@@ -66,7 +66,7 @@ class ProdutoController{
                 $pDAO->atualizarProd($prod);
 
                 echo "<script>alert('Produto ATUALIZADO')</script>";
-                echo"<script> history.go(-2)</script>";
+                echo"<script> history.go(-1)</script>";
 
             }
         }
@@ -89,7 +89,7 @@ class ProdutoController{
                 $pDAO = new produtoDAO();
                 $pDAO->excluir($prod);
                 echo "<script>alert('Produto DELETADO')</script>";
-                echo"<script> history.go(-2)</script>";
+                echo"<script> history.go(-1)</script>";
 
           }
           }

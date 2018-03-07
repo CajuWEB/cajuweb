@@ -31,7 +31,7 @@ class FilialController{
         $fDAO = new filialDAO();
         $fDAO->inserir($fili);
         echo "<script>alert('FILIAL CADASTRADO')</script>";
-        echo"<script> history.go(-2)</script>";
+        echo"<script> history.go(-1)</script>";
 
         }
     }
@@ -62,7 +62,7 @@ class FilialController{
                 $fDAO->atualizarFili($fili);
 
                 echo "<script>alert('filial ATUALIZADO')</script>";
-                echo"<script> history.go(-2)</script>";
+                echo"<script> history.go(-1)</script>";
 
             }
         }
@@ -85,7 +85,7 @@ class FilialController{
                 $fDAO = new filialDAO();
                 $fDAO->excluir($fili);
                 echo "<script>alert('Produto DELETADO')</script>";
-                echo"<script> history.go(-2)</script>";
+                echo"<script> history.go(-1)</script>";
 
           }
           }
