@@ -1,5 +1,0 @@
-RewriteEngine On
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^([^/].+)/([^/].+)$ Index.php?classe=$1&metodo=$2 [L]
-RewriteRule ^([^/].*)/([^/].*)/$ Index.php/?classe=$1&metodo=$2
