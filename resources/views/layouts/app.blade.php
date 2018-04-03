@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,7 +15,7 @@
     <link href="/css/app.css" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/bootstrap-select.min.css')}}">
-    
+    <link rel="shortcut icon" href="{{asset('img/favicon.ico')}}">
     <!-- Scripts -->
     <script>
         window.Laravel = <?php echo json_encode([
@@ -38,7 +39,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Sistema Vendas') }}
+                        Siscomf
                     </a>
                 </div>
 
@@ -52,7 +53,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @if (Auth::guest())
-                            <li><a href="{{ url('/login') }}">Login</a></li>
+                            <!--<li><a href="{{ url('/login') }}">Login</a></li>-->
                             <li><a href="{{ url('/register') }}">Registrar-se</a></li>
                         @else
                             <li class="dropdown">

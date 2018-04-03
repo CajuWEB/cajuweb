@@ -27,8 +27,8 @@ class VendaFormRequest extends FormRequest
         return [
            'idcliente'=>'required',
            'tipo_comprovante'=>'required|max:20',
-           'serie_comprovante'=>'required|max:20',
-           'num_comprovante'=>'required|max:20',
+           //'serie_comprovante'=>'required|max:20',
+           //'num_comprovante'=>'required|max:20',
            'idproduto'=>'required',
            'quantidade'=>'required',
            'preco_venda'=>'required',

@@ -14,8 +14,8 @@
 				<thead>
 					<th>Data</th>
 					<th>Cliente</th>
-					<th>Tipo Comprovante</th>
-					
+					<th>Tipo de Venda</th>
+
 					<th>Taxa</th>
 					<th>Total</th>
 					<th>Estado</th>
@@ -25,12 +25,12 @@
 				<tr>
 					<td>{{$ent->data_hora}}</td>
 					<td>{{$ent->nome}}</td>
-					<td>{{$ent->tipo_comprovante. ' - ' .$ent->serie_comprovante. ' - ' .$ent->num_comprovante}}</td>
-										
+					<td>{{$ent->tipo_comprovante}}</td>
+
 					<td>{{$ent->taxa}}</td>
 					<td>{{$ent->total_venda}}</td>
 					<td>{{$ent->estado}}</td>
-										
+
 					<td>
 						<a href="{{URL::action('VendaController@show',$ent->idvenda)}}"><button class="btn btn-info">Detalhes</button></a>
                          <a href="" data-target="#modal-delete-{{$ent->idvenda}}" data-toggle="modal"><button class="btn btn-danger">Anular</button></a>

@@ -2,9 +2,9 @@
 @section('conteudo')
 <div class="row">
 		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-			<h3>Nova Venda</h3>  
+			<h3>Nova Venda</h3>
 
-                  
+
 			@if (count($errors)>0)
 			<div class="alert alert-danger">
 				<ul>
@@ -19,14 +19,14 @@
 
 			{!!Form::open(array('url'=>'venda/venda','method'=>'POST','autocomplete'=>'off'))!!}
             {{Form::token()}}
-           
+
 
             <div class="row">
-            	
+
             	<div class="col-lg-12 col-sm-12 col-xs-12">
 	            	<div class="form-group">
 	            	<label for="nome">Cliente</label>
-	            	
+
                         <select name="idcliente" id="idcliente" class="form-control selectpicker" data-live-search="true">
                               @foreach($pessoas as $pes)
                               <option value="{{$pes->idpessoas}}">
@@ -37,47 +37,47 @@
 	            	</div>
             	</div>
 
-            	
+
 
             	<div class="col-lg-4 col-sm-4 col-xs-12">
             		<div class="form-group">
             		<label>Tipo Comprovante</label>
             		<select name="tipo_comprovante" id="tipo_comprovante" class="form-control">
-	            		
+
                               <option value="Dinheiro">Dinheiro </option>
 	            		<option value="Boleto"> Boleto </option>
 	            		<option value="Cartão">Cartão </option>
 
-	            		
+
             		</select>
             		</div>
-            		
+
             	</div>
 
-            		
-            	
+
+
             	<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
             		<div class="form-group">
-	            	<label for="num_doc">Série Comprovante</label>
-	            	<input type="text" name="serie_comprovante" required value="{{old('serie_comprovante')}}" class="form-control" placeholder="Série do comprovante...">
+	            	<!--<label for="num_doc">Série Comprovante</label>-->
+	            	<!--<input type="text" name="serie_comprovante" required value="{{old('serie_comprovante')}}" class="form-control" placeholder="Série do comprovante...">-->
 	            	</div>
-            		
+
             	</div>
-            		
+
             	<div class="col-lg-4 col-sm-4 col-xs-12">
                         <div class="form-group">
-                        <label for="num_doc">Número Comprovante</label>
-                        <input type="text" name="num_comprovante" required value="{{old('num_comprovante')}}" class="form-control" placeholder="Número do comprovante...">
+                        <!--<label for="num_doc">Número Comprovante</label>-->
+                        <!--<input type="text" name="num_comprovante" required value="{{old('num_comprovante')}}" class="form-control" placeholder="Número do comprovante...">-->
                         </div>
-                        
+
                   </div>
 
-            	
+
 
             </div>
 
-            
-           
+
+
       <div class="row">
 
             <div class="panel panel-primary">
@@ -85,12 +85,12 @@
                         <div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
                               <div class="form-group">
                               <label for="nome">Produto</label>
-                              
+
                               <select name="pidproduto" id="pidproduto" class="form-control selectpicker" data-live-search="true">
                               <option value="">Selecione um Produto </option>
                                     @foreach($produtos as $pro)
                                     <option value="{{$pro->idproduto}}_{{$pro->estoque}}_{{$pro->preco_medio}}">
-                                    {{$pro->produto}}  
+                                    {{$pro->produto}}
                                     </option>
                                     @endforeach
                               </select>
@@ -112,7 +112,7 @@
                         <div class="col-lg-2 col-sm-2 col-md-2  col-xs-12">
                               <div class="form-group">
                               <label for="num_doc">Preço Venda</label>
-                              <input type="number" name="preco_venda" 
+                              <input type="number" name="preco_venda"
                               id="ppreco_venda"
                               disabled
                               class="form-control" placeholder="Preço de Venda...">
@@ -122,7 +122,7 @@
                         <div class="col-lg-2 col-sm-2 col-md-2  col-xs-12">
                               <div class="form-group">
                               <label for="num_doc">Estoque</label>
-                              <input type="number" name="estoque" 
+                              <input type="number" name="estoque"
                               id="pestoque"
                               disabled
                               class="form-control" placeholder="Estoque...">
@@ -132,13 +132,13 @@
                         <div class="col-lg-2 col-sm-2 col-md-2  col-xs-12">
                               <div class="form-group">
                               <label for="num_doc">Desconto</label>
-                              <input type="number" name="desconto" 
+                              <input type="number" name="desconto"
                               id="pdesconto"
                               class="form-control" placeholder="Desconto..." value="0">
                               </div>
                         </div>
 
-                        
+
 
                         <div class="col-lg-2 col-sm-2 col-md-2  col-xs-12">
                               <div class="form-group">
@@ -146,7 +146,7 @@
                               class="btn btn-primary">
                               Adicionar
                               </button>
-                              
+
                               </div>
                         </div>
 
@@ -169,7 +169,7 @@
                         <th></th>
                         <th><h4 id="total">R$ 0,00 </h4>
                         <input type="hidden" name="total_venda" id="total_venda">
-                        </th>     
+                        </th>
                         </tfoot>
                         </table>
                         </div>
@@ -187,9 +187,9 @@
                   </div>
                  </div>
 
-	</div>	
-      {!!Form::close()!!}		
-            
+	</div>
+      {!!Form::close()!!}
+
 @push('scripts')
 
 <script>
@@ -241,7 +241,7 @@ function adicionar(){
 
             }
 
-           
+
 
       }else{
             alert("Erro ao inserir os detalhes da venda, preencha os campos corretamente!!");

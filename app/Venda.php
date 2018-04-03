@@ -14,8 +14,8 @@ class Venda extends Model
 
     'idcliente',
     'tipo_comprovante',
-    'serie_comprovante',
-    'num_comprovante',
+    //'serie_comprovante',
+    //'num_comprovante',
     'data_hora',
     'taxa',
     'total_venda',
