@@ -22,6 +22,7 @@ Route::resource('compra/fornecedor', 'FornecedorController');
 Route::resource('compra/entrada', 'EntradaController');
 Route::resource('venda/venda', 'VendaController');
 Route::resource('seguranca/usuario', 'usuarioController');
+Route::resource('duplicata', 'DuplicataController');
 
 Route::auth();
 Auth::routes();

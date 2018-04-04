@@ -1,4 +1,23 @@
 @extends('layouts.admin')
+@section('notify')
+
+@foreach ($duplicata as $dup)
+
+               @php($diferenca = strtotime($dup->data_venc) - strtotime(date('Y/m/d', strtotime('+0 days'))) )
+                                        @php($dias = floor($diferenca / (60 * 60 * 24)) )
+
+                                        @if($dias < 7)
+                                            @php($classe = "Atenção!")
+                                        @endif
+
+				
+				
+				@include('duplicata.modal')
+				@endforeach
+				<button> {{$classe}}
+				</button>
+
+@stop
 @section('conteudo')
 <div class="row">
 	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
